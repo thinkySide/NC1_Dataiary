@@ -9,20 +9,21 @@ import SwiftUI
 
 struct SwiftDataListView: View {
     
+    @EnvironmentObject var pathModel: PathModel
+    
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 0) {
-                ScrollView {
-                    
-                }
+        VStack(spacing: 0) {
+            ScrollView {
                 
-                Spacer()
-                
-                DiaryActionButton(title: "add diary.") {
-                    // TODO: 일기 작성 뷰 이동
-                }
+            }
+            
+            Spacer()
+            
+            DiaryActionButton(title: "add diary.") {
+                pathModel.paths.append(.write)
             }
         }
+        .background(Color.background)
     }
 }
 

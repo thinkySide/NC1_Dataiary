@@ -9,9 +9,7 @@ import SwiftUI
 
 struct CoreDataListView: View {
     var body: some View {
-        NavigationStack {
-            Text("CoreDataListView")
-        }
+        Text("CoreDataListView")
     }
 }
 

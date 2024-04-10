@@ -17,23 +17,23 @@ struct DiaryNavigationBar<Leading: View, Trailing: View>: View {
     private let navigationPadding: CGFloat = 16
     
     var body: some View {
-        HStack {
-            leadingView
-                .padding(.leading, navigationPadding)
-            
-            Spacer()
+        ZStack {
+            HStack {
+                leadingView
+                    .padding(.leading, navigationPadding)
+                
+                Spacer()
+                
+                trailingView
+                    .padding(.trailing, navigationPadding)
+            }
+            .frame(maxWidth: .infinity)
+            .frame(height: 48)
+            .background(Color.background)
             
             Text(title)
                 .pretendard(.black, 12)
-            
-            Spacer()
-            
-            trailingView
-                .padding(.trailing, navigationPadding)
         }
-        .frame(maxWidth: .infinity)
-        .frame(height: 48)
-        .background(Color.background)
     }
 }
 

@@ -36,7 +36,6 @@ private struct TabBarCell: View {
     var body: some View {
         Button {
             if let tab = Tab(rawValue: title) {
-                print(tab)
                 selectedTab = tab
             }
         } label: {

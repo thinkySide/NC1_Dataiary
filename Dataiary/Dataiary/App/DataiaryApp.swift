@@ -10,6 +10,7 @@ import SwiftData
 
 @main
 struct DataiaryApp: App {
+    
 //    var sharedModelContainer: ModelContainer = {
 //        let schema = Schema([
 //            Item.self,
@@ -25,7 +26,7 @@ struct DataiaryApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            MainView()
         }
         // .modelContainer(sharedModelContainer)
     }
