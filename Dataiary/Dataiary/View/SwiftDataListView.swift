@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct SwiftDataListView: View {
+    
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 0) {
+                ScrollView {
+                    
+                }
+                
                 Spacer()
                 
                 DiaryActionButton(title: "add diary.") {
-                    
+                    // TODO: 일기 작성 뷰 이동
                 }
             }
         }

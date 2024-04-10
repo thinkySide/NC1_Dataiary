@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		827B7DB62BC535B000C56FE5 /* DataiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DB52BC535B000C56FE5 /* DataiaryApp.swift */; };
 		827B7DB82BC535B000C56FE5 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DB72BC535B000C56FE5 /* MainTabView.swift */; };
-		827B7DBA2BC535B000C56FE5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DB92BC535B000C56FE5 /* Item.swift */; };
 		827B7DBC2BC535B100C56FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 827B7DBB2BC535B100C56FE5 /* Assets.xcassets */; };
 		827B7DBF2BC535B100C56FE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 827B7DBE2BC535B100C56FE5 /* Preview Assets.xcassets */; };
 		827B7DCA2BC66E5100C56FE5 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 827B7DC92BC66E5100C56FE5 /* Colors.xcassets */; };
@@ -31,13 +30,15 @@
 		827B7DF02BC67F7F00C56FE5 /* DiaryNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DEF2BC67F7F00C56FE5 /* DiaryNavigationBar.swift */; };
 		827B7DF22BC680F600C56FE5 /* Helper+NameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DF12BC680F600C56FE5 /* Helper+NameSpace.swift */; };
 		827B7DF62BC6BBC000C56FE5 /* DiaryActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DF52BC6BBC000C56FE5 /* DiaryActionButton.swift */; };
+		827B7DF82BC6BF8000C56FE5 /* DiaryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DF72BC6BF8000C56FE5 /* DiaryListCell.swift */; };
+		827B7DFA2BC6BFCD00C56FE5 /* SwiftDataDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DF92BC6BFCD00C56FE5 /* SwiftDataDiary.swift */; };
+		827B7DFC2BC6C22300C56FE5 /* Helper+DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DFB2BC6C22300C56FE5 /* Helper+DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		827B7DB22BC535B000C56FE5 /* Dataiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dataiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		827B7DB52BC535B000C56FE5 /* DataiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataiaryApp.swift; sourceTree = "<group>"; };
 		827B7DB72BC535B000C56FE5 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		827B7DB92BC535B000C56FE5 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		827B7DBB2BC535B100C56FE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		827B7DBE2BC535B100C56FE5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		827B7DC92BC66E5100C56FE5 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -60,6 +61,9 @@
 		827B7DEF2BC67F7F00C56FE5 /* DiaryNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryNavigationBar.swift; sourceTree = "<group>"; };
 		827B7DF12BC680F600C56FE5 /* Helper+NameSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+NameSpace.swift"; sourceTree = "<group>"; };
 		827B7DF52BC6BBC000C56FE5 /* DiaryActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryActionButton.swift; sourceTree = "<group>"; };
+		827B7DF72BC6BF8000C56FE5 /* DiaryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListCell.swift; sourceTree = "<group>"; };
+		827B7DF92BC6BFCD00C56FE5 /* SwiftDataDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataDiary.swift; sourceTree = "<group>"; };
+		827B7DFB2BC6C22300C56FE5 /* Helper+DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+DateExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				827B7DE42BC6753B00C56FE5 /* Tab.swift */,
-				827B7DB92BC535B000C56FE5 /* Item.swift */,
+				827B7DF92BC6BFCD00C56FE5 /* SwiftDataDiary.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +183,7 @@
 			children = (
 				827B7DF12BC680F600C56FE5 /* Helper+NameSpace.swift */,
 				827B7DE12BC6712200C56FE5 /* Helper+CustomFont.swift */,
+				827B7DFB2BC6C22300C56FE5 /* Helper+DateExtension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				827B7DED2BC6779100C56FE5 /* DiaryTabBar.swift */,
 				827B7DEF2BC67F7F00C56FE5 /* DiaryNavigationBar.swift */,
 				827B7DF52BC6BBC000C56FE5 /* DiaryActionButton.swift */,
+				827B7DF72BC6BF8000C56FE5 /* DiaryListCell.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -274,13 +280,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				827B7DE72BC6763300C56FE5 /* SwiftDataListView.swift in Sources */,
+				827B7DFC2BC6C22300C56FE5 /* Helper+DateExtension.swift in Sources */,
 				827B7DF62BC6BBC000C56FE5 /* DiaryActionButton.swift in Sources */,
 				827B7DB82BC535B000C56FE5 /* MainTabView.swift in Sources */,
+				827B7DFA2BC6BFCD00C56FE5 /* SwiftDataDiary.swift in Sources */,
 				827B7DE92BC676FB00C56FE5 /* RealmDataListView.swift in Sources */,
 				827B7DEB2BC6771800C56FE5 /* CoreDataListView.swift in Sources */,
-				827B7DBA2BC535B000C56FE5 /* Item.swift in Sources */,
 				827B7DF22BC680F600C56FE5 /* Helper+NameSpace.swift in Sources */,
 				827B7DE52BC6753B00C56FE5 /* Tab.swift in Sources */,
+				827B7DF82BC6BF8000C56FE5 /* DiaryListCell.swift in Sources */,
 				827B7DE22BC6712200C56FE5 /* Helper+CustomFont.swift in Sources */,
 				827B7DB62BC535B000C56FE5 /* DataiaryApp.swift in Sources */,
 				827B7DEE2BC6779100C56FE5 /* DiaryTabBar.swift in Sources */,
