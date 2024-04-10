@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		827B7DB62BC535B000C56FE5 /* DataiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DB52BC535B000C56FE5 /* DataiaryApp.swift */; };
-		827B7DB82BC535B000C56FE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DB72BC535B000C56FE5 /* ContentView.swift */; };
+		827B7DB82BC535B000C56FE5 /* DiaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DB72BC535B000C56FE5 /* DiaryListView.swift */; };
 		827B7DBA2BC535B000C56FE5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DB92BC535B000C56FE5 /* Item.swift */; };
 		827B7DBC2BC535B100C56FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 827B7DBB2BC535B100C56FE5 /* Assets.xcassets */; };
 		827B7DBF2BC535B100C56FE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 827B7DBE2BC535B100C56FE5 /* Preview Assets.xcassets */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		827B7DB22BC535B000C56FE5 /* Dataiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dataiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		827B7DB52BC535B000C56FE5 /* DataiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataiaryApp.swift; sourceTree = "<group>"; };
-		827B7DB72BC535B000C56FE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		827B7DB72BC535B000C56FE5 /* DiaryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListView.swift; sourceTree = "<group>"; };
 		827B7DB92BC535B000C56FE5 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		827B7DBB2BC535B100C56FE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		827B7DBE2BC535B100C56FE5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -53,10 +53,10 @@
 		827B7DB42BC535B000C56FE5 /* Dataiary */ = {
 			isa = PBXGroup;
 			children = (
-				827B7DB52BC535B000C56FE5 /* DataiaryApp.swift */,
-				827B7DB72BC535B000C56FE5 /* ContentView.swift */,
-				827B7DB92BC535B000C56FE5 /* Item.swift */,
-				827B7DBB2BC535B100C56FE5 /* Assets.xcassets */,
+				827B7DC62BC66D9E00C56FE5 /* App */,
+				827B7DC72BC66DAF00C56FE5 /* Model */,
+				827B7DC52BC66D7F00C56FE5 /* View */,
+				827B7DC82BC66DBE00C56FE5 /* Resource */,
 				827B7DBD2BC535B100C56FE5 /* Preview Content */,
 			);
 			path = Dataiary;
@@ -68,6 +68,38 @@
 				827B7DBE2BC535B100C56FE5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		827B7DC52BC66D7F00C56FE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				827B7DB72BC535B000C56FE5 /* DiaryListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		827B7DC62BC66D9E00C56FE5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				827B7DB52BC535B000C56FE5 /* DataiaryApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		827B7DC72BC66DAF00C56FE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				827B7DB92BC535B000C56FE5 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		827B7DC82BC66DBE00C56FE5 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				827B7DBB2BC535B100C56FE5 /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				827B7DB82BC535B000C56FE5 /* ContentView.swift in Sources */,
+				827B7DB82BC535B000C56FE5 /* DiaryListView.swift in Sources */,
 				827B7DBA2BC535B000C56FE5 /* Item.swift in Sources */,
 				827B7DB62BC535B000C56FE5 /* DataiaryApp.swift in Sources */,
 			);
