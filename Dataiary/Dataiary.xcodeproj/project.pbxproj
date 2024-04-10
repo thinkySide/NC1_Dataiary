@@ -35,6 +35,7 @@
 		827B7DFC2BC6C22300C56FE5 /* Helper+DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DFB2BC6C22300C56FE5 /* Helper+DateExtension.swift */; };
 		827B7DFE2BC6C3EA00C56FE5 /* WriteDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DFD2BC6C3EA00C56FE5 /* WriteDiaryView.swift */; };
 		827B7E002BC6C55800C56FE5 /* PathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DFF2BC6C55800C56FE5 /* PathType.swift */; };
+		827B7E022BC6CFD200C56FE5 /* DiaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E012BC6CFD200C56FE5 /* DiaryTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		827B7DFB2BC6C22300C56FE5 /* Helper+DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+DateExtension.swift"; sourceTree = "<group>"; };
 		827B7DFD2BC6C3EA00C56FE5 /* WriteDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryView.swift; sourceTree = "<group>"; };
 		827B7DFF2BC6C55800C56FE5 /* PathType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathType.swift; sourceTree = "<group>"; };
+		827B7E012BC6CFD200C56FE5 /* DiaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				827B7DEF2BC67F7F00C56FE5 /* DiaryNavigationBar.swift */,
 				827B7DF52BC6BBC000C56FE5 /* DiaryActionButton.swift */,
 				827B7DF72BC6BF8000C56FE5 /* DiaryListCell.swift */,
+				827B7E012BC6CFD200C56FE5 /* DiaryTextField.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				827B7DE22BC6712200C56FE5 /* Helper+CustomFont.swift in Sources */,
 				827B7DB62BC535B000C56FE5 /* DataiaryApp.swift in Sources */,
 				827B7DEE2BC6779100C56FE5 /* DiaryTabBar.swift in Sources */,
+				827B7E022BC6CFD200C56FE5 /* DiaryTextField.swift in Sources */,
 				827B7DF02BC67F7F00C56FE5 /* DiaryNavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

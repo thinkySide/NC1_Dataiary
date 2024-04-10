@@ -9,31 +9,38 @@ import SwiftUI
 
 struct WriteDiaryView: View {
     
-    var body: some View {
-        VStack(spacing: 0) {
-            NavigationBar()
-        }
-        .navigationBarBackButtonHidden()
-    }
-}
-
-// MARK: - NavigationBar
-private struct NavigationBar: View {
-    
     @EnvironmentObject var pathModel: PathModel
     
+    @State private var content: String = ""
+    
     var body: some View {
-        DiaryNavigationBar(
-            title: Date().diaryFormat,
-            leadingView: {
-                Button("", image: .backIcon) {
-                    pathModel.paths.removeLast()
+        VStack(spacing: 12) {
+            DiaryNavigationBar(
+                title: Date().diaryFormat,
+                leadingView: {
+                    Button("", image: .backIcon) {
+                        pathModel.paths.removeLast()
+                    }
+                },
+                trailingView: {
+                    Button {
+                        // TODO: 일기 생성
+                    } label: {
+                        Text("done.")
+                            .pretendard(.bold, 14)
+                            .foregroundStyle(Color.main)
+                    }
+                    .opacity(content.isEmpty ? 0.3 : 1)
+                    .disabled(content.isEmpty)
                 }
-            },
-            trailingView: {
-                
-            }
-        )
+            )
+            
+            DiaryTextField(contentText: $content)
+            
+            Spacer()
+        }
+        .background(Color.background)
+        .navigationBarBackButtonHidden()
     }
 }
 
