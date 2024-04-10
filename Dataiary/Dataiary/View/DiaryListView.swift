@@ -14,7 +14,8 @@ struct DiaryListView: View {
 
     var body: some View {
         NavigationStack {
-            
+            Text("프리텐다드 테스트")
+                .pretendard(weight: .black, size: 28)
         }
     }
 }
