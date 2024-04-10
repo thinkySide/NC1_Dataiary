@@ -27,6 +27,8 @@ struct MainTabView: View {
                     .tag(Tab.swiftData)
             }
         }
+        .background(Color.background)
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }
 

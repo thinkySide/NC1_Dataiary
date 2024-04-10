@@ -33,25 +33,33 @@ private struct TabBarCell: View {
     let isActive: Bool
     
     var body: some View {
-        VStack {
-            Button {
-                if let tab = Tab(rawValue: title) {
-                    print(tab)
-                    selectedTab = tab
-                }
-            } label: {
+        Button {
+            if let tab = Tab(rawValue: title) {
+                print(tab)
+                selectedTab = tab
+            }
+        } label: {
+            VStack {
+                Spacer()
+                    .frame(height: 14)
+                
                 Text(title)
                     .pretendard(.extraBold, 15)
                     .foregroundStyle(Color.main)
                     .frame(maxWidth: .infinity)
+                
+                Spacer()
+                
+                Rectangle()
+                    .foregroundStyle(Color.main)
+                    .frame(height: 2)
+                    .frame(maxWidth: .infinity)
             }
-            
-            Rectangle()
-                .foregroundStyle(Color.main)
-                .frame(height: 2)
-                .frame(maxWidth: .infinity)
         }
-        .opacity(isActive ? 1 : 0.1)
+        .frame(height: 48)
+        .opacity(isActive ? 1 : 0.2)
+        .animation(nil, value: selectedTab)
+        
     }
 }
 
