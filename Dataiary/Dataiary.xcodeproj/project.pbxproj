@@ -28,6 +28,8 @@
 		827B7DE92BC676FB00C56FE5 /* RealmDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DE82BC676FB00C56FE5 /* RealmDataListView.swift */; };
 		827B7DEB2BC6771800C56FE5 /* CoreDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DEA2BC6771800C56FE5 /* CoreDataListView.swift */; };
 		827B7DEE2BC6779100C56FE5 /* DiaryTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DED2BC6779100C56FE5 /* DiaryTabBar.swift */; };
+		827B7DF02BC67F7F00C56FE5 /* DiaryNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DEF2BC67F7F00C56FE5 /* DiaryNavigationBar.swift */; };
+		827B7DF22BC680F600C56FE5 /* Helper+NameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DF12BC680F600C56FE5 /* Helper+NameSpace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		827B7DE82BC676FB00C56FE5 /* RealmDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataListView.swift; sourceTree = "<group>"; };
 		827B7DEA2BC6771800C56FE5 /* CoreDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataListView.swift; sourceTree = "<group>"; };
 		827B7DED2BC6779100C56FE5 /* DiaryTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTabBar.swift; sourceTree = "<group>"; };
+		827B7DEF2BC67F7F00C56FE5 /* DiaryNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryNavigationBar.swift; sourceTree = "<group>"; };
+		827B7DF12BC680F600C56FE5 /* Helper+NameSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+NameSpace.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 		827B7DE02BC6711000C56FE5 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				827B7DF12BC680F600C56FE5 /* Helper+NameSpace.swift */,
 				827B7DE12BC6712200C56FE5 /* Helper+CustomFont.swift */,
 			);
 			path = Helper;
@@ -180,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				827B7DED2BC6779100C56FE5 /* DiaryTabBar.swift */,
+				827B7DEF2BC67F7F00C56FE5 /* DiaryNavigationBar.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -269,10 +275,12 @@
 				827B7DE92BC676FB00C56FE5 /* RealmDataListView.swift in Sources */,
 				827B7DEB2BC6771800C56FE5 /* CoreDataListView.swift in Sources */,
 				827B7DBA2BC535B000C56FE5 /* Item.swift in Sources */,
+				827B7DF22BC680F600C56FE5 /* Helper+NameSpace.swift in Sources */,
 				827B7DE52BC6753B00C56FE5 /* Tab.swift in Sources */,
 				827B7DE22BC6712200C56FE5 /* Helper+CustomFont.swift in Sources */,
 				827B7DB62BC535B000C56FE5 /* DataiaryApp.swift in Sources */,
 				827B7DEE2BC6779100C56FE5 /* DiaryTabBar.swift in Sources */,
+				827B7DF02BC67F7F00C56FE5 /* DiaryNavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

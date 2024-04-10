@@ -13,7 +13,13 @@ struct MainTabView: View {
     @State var selectedTab: Tab = .coreData
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
+            DiaryNavigationBar(
+                title: AppInfo.name,
+                leadingView: {},
+                trailingView: {}
+            )
+            
             DiaryTabBar(selectedTab: $selectedTab)
             
             TabView(selection: $selectedTab) {
