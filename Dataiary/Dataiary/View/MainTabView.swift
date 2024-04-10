@@ -10,7 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     
     /// 현재 선택된 Tab
-    @State var selectedTab: Tab = .coreData
+    @State var selectedTab: Tab = .swiftData
     
     var body: some View {
         VStack(spacing: 0) {
@@ -33,11 +33,12 @@ struct MainTabView: View {
                     .tag(Tab.swiftData)
             }
         }
-        .background(Color.background)
+        .background(Color.main)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }
 
 #Preview {
     MainTabView()
+    
 }

@@ -9,7 +9,15 @@ import SwiftUI
 
 struct SwiftDataListView: View {
     var body: some View {
-        Text("SwiftDataListView")
+        NavigationStack {
+            VStack {
+                Spacer()
+                
+                DiaryActionButton(title: "add diary.") {
+                    
+                }
+            }
+        }
     }
 }
 

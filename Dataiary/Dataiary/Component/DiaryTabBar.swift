@@ -21,6 +21,7 @@ struct DiaryTabBar: View {
                 )
             }
         }
+        .background(Color.background)
     }
 }
 

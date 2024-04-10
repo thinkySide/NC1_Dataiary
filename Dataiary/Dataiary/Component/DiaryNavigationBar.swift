@@ -33,6 +33,7 @@ struct DiaryNavigationBar<Leading: View, Trailing: View>: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 48)
+        .background(Color.background)
     }
 }
 
