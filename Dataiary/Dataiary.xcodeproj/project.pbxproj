@@ -42,7 +42,7 @@
 		827B7DD32BC66FBE00C56FE5 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		827B7DD42BC66FBE00C56FE5 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		827B7DD52BC66FBE00C56FE5 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
-		827B7DDF2BC66FE900C56FE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		827B7DDF2BC66FE900C56FE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		827B7DE12BC6712200C56FE5 /* Helper+CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+CustomFont.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +76,6 @@
 		827B7DB42BC535B000C56FE5 /* Dataiary */ = {
 			isa = PBXGroup;
 			children = (
-				827B7DDF2BC66FE900C56FE5 /* Info.plist */,
 				827B7DC62BC66D9E00C56FE5 /* App */,
 				827B7DC72BC66DAF00C56FE5 /* Model */,
 				827B7DC52BC66D7F00C56FE5 /* View */,
@@ -106,6 +105,7 @@
 		827B7DC62BC66D9E00C56FE5 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				827B7DDF2BC66FE900C56FE5 /* Info.plist */,
 				827B7DB52BC535B000C56FE5 /* DataiaryApp.swift */,
 			);
 			path = App;
@@ -381,7 +381,7 @@
 				DEVELOPMENT_TEAM = 9XG4S4XZWN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Dataiary/Info.plist;
+				INFOPLIST_FILE = Dataiary/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -411,7 +411,7 @@
 				DEVELOPMENT_TEAM = 9XG4S4XZWN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Dataiary/Info.plist;
+				INFOPLIST_FILE = Dataiary/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
