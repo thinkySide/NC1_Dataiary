@@ -34,7 +34,7 @@ struct PretendardModifier: ViewModifier {
 extension View {
     
     /// 프리텐다드 커스텀 폰트를 적용 후 반환합니다.
-    func pretendard(weight: PretendardModifier.FontWeight, size: CGFloat) -> some View {
+    func pretendard(_ weight: PretendardModifier.FontWeight, _ size: CGFloat) -> some View {
         modifier(PretendardModifier(weight: weight, size: size))
     }
 }

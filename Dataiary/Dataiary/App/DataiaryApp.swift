@@ -25,7 +25,7 @@ struct DataiaryApp: App {
 
     var body: some Scene {
         WindowGroup {
-            DiaryListView()
+            MainTabView()
         }
         .modelContainer(sharedModelContainer)
     }
