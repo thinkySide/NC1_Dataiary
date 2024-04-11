@@ -13,14 +13,15 @@ struct WriteDiaryView: View {
     @EnvironmentObject var pathModel: PathModel
     
     @Environment(\.modelContext) private var modelContext
-    @Query private var diarys: [SwiftDataDiary]
     
     @State private var content: String = ""
+    
+    let creationDate = Date()
     
     var body: some View {
         VStack(spacing: 12) {
             DiaryNavigationBar(
-                title: Date().diaryFormat,
+                title: creationDate.diaryFormat,
                 leadingView: {
                     Button("", image: .backIcon) {
                         pathModel.paths.removeLast()
@@ -52,7 +53,7 @@ struct WriteDiaryView: View {
         // 1. Diary를 SwiftDataDiary로 변환
         let swiftDataDiary = SwiftDataDiary(
             id: UUID(),
-            date: Date(),
+            date: creationDate,
             content: content
         )
         

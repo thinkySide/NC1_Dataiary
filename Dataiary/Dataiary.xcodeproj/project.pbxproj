@@ -40,6 +40,7 @@
 		827B7E072BC777B800C56FE5 /* SwiftDataDiaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E062BC777B800C56FE5 /* SwiftDataDiaryManager.swift */; };
 		827B7E0A2BC7785900C56FE5 /* DiaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E092BC7785900C56FE5 /* DiaryManager.swift */; };
 		827B7E0C2BC778B400C56FE5 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E0B2BC778B400C56FE5 /* Diary.swift */; };
+		827B7E112BC7A9A800C56FE5 /* MockModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E102BC7A9A800C56FE5 /* MockModelContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		827B7E062BC777B800C56FE5 /* SwiftDataDiaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataDiaryManager.swift; sourceTree = "<group>"; };
 		827B7E092BC7785900C56FE5 /* DiaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryManager.swift; sourceTree = "<group>"; };
 		827B7E0B2BC778B400C56FE5 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
+		827B7E102BC7A9A800C56FE5 /* MockModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModelContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				827B7DC52BC66D7F00C56FE5 /* View */,
 				827B7DEC2BC6777B00C56FE5 /* Component */,
 				827B7DE02BC6711000C56FE5 /* Helper */,
+				827B7E0F2BC7A99000C56FE5 /* Mock */,
 				827B7DC82BC66DBE00C56FE5 /* Resource */,
 				827B7DBD2BC535B100C56FE5 /* Preview Content */,
 			);
@@ -236,6 +239,14 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		827B7E0F2BC7A99000C56FE5 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				827B7E102BC7A9A800C56FE5 /* MockModelContainer.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,6 +340,7 @@
 				827B7E002BC6C55800C56FE5 /* PathType.swift in Sources */,
 				827B7DF22BC680F600C56FE5 /* Helper+NameSpace.swift in Sources */,
 				827B7DE52BC6753B00C56FE5 /* Tab.swift in Sources */,
+				827B7E112BC7A9A800C56FE5 /* MockModelContainer.swift in Sources */,
 				827B7DF82BC6BF8000C56FE5 /* DiaryListCell.swift in Sources */,
 				827B7E0C2BC778B400C56FE5 /* Diary.swift in Sources */,
 				827B7DE22BC6712200C56FE5 /* Helper+CustomFont.swift in Sources */,

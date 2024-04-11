@@ -22,7 +22,8 @@ struct DataiaryApp: App {
         
         // 3. ModelContainer 생성
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            let container = try ModelContainer(for: schema, configurations: [modelConfiguration])
+            return container
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }

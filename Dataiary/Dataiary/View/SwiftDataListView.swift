@@ -11,18 +11,19 @@ import SwiftData
 struct SwiftDataListView: View {
     
     @EnvironmentObject var pathModel: PathModel
-    
-    @Environment(\.modelContext) private var modelContext
-    @Query private var diarys: [SwiftDataDiary]
+    @EnvironmentObject var diaryManager: SwiftDataDiaryManager
     
     var body: some View {
         VStack(spacing: 0) {
             ScrollView {
-                ForEach(diarys) { diary in
-                    DiaryListCell(date: diary.date, content: diary.content)
-                        .onTapGesture {
-                            pathModel.paths.append(.read)
-                        }
+                ForEach(diaryManager.fetchList()) { diary in
+                    DiaryListCell(
+                        date: diary.date,
+                        content: diary.content
+                    )
+                    .onTapGesture {
+                        pathModel.paths.append(.read)
+                    }
                 }
             }
             .padding(.top, 16)
@@ -37,6 +38,6 @@ struct SwiftDataListView: View {
     }
 }
 
-#Preview {
-    SwiftDataListView()
-}
+//#Preview {
+//    SwiftDataListView(diaryManager: <#SwiftDataDiaryManager#>)
+//}

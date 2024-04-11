@@ -10,10 +10,13 @@ import SwiftUI
 struct MainView: View {
     
     /// Navigation Path를 관리하는 모델
-    @StateObject private var pathModel = PathModel()
+    @StateObject private var pathModel: PathModel = .init()
     
     /// 현재 선택된 Tab
     @State private var selectedTab: Tab = .swiftData
+    
+    /// SwiftData에서 사용할 ModelContext
+    @Environment(\.modelContext) private var modelContext
     
     var body: some View {
         NavigationStack(path: $pathModel.paths) {
@@ -26,33 +29,51 @@ struct MainView: View {
                 
                 DiaryTabBar(selectedTab: $selectedTab)
                 
-                TabView(selection: $selectedTab) {
-                    CoreDataListView()
-                        .tag(Tab.coreData)
-                    
-                    RealmDataListView()
-                        .tag(Tab.realm)
-                    
-                    SwiftDataListView()
-                        .tag(Tab.swiftData)
-                }
+                DataTabView(
+                    swiftDataDiarymanager: SwiftDataDiaryManager(modelContext: modelContext),
+                    selectedTab: $selectedTab
+                )
             }
             .background(Color.main)
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            .navigationDestination(for: PathType.self) { path in
-                switch path {
-                case .read:
-                    ReadDiaryView()
-                    
-                case .write:
-                    WriteDiaryView()
-                }
-            }
         }
         .environmentObject(pathModel)
     }
 }
 
+// MARK: - DataTabView
+private struct DataTabView: View {
+    
+    @StateObject var swiftDataDiarymanager: SwiftDataDiaryManager
+    @Binding var selectedTab: Tab
+    
+    var body: some View {
+        TabView(selection: $selectedTab) {
+            CoreDataListView()
+                .tag(Tab.coreData)
+            
+            RealmDataListView()
+                .tag(Tab.realm)
+            
+            SwiftDataListView()
+            .tag(Tab.swiftData)
+            .environmentObject(swiftDataDiarymanager)
+        }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        .navigationDestination(for: PathType.self) { path in
+            switch path {
+            case .read:
+                ReadDiaryView()
+                
+            case .write:
+                WriteDiaryView()
+            }
+        }
+    }
+}
+
+// MARK: - Preview
 #Preview {
     MainView()
+        .modelContainer(MockModelContainer.mockModelContainer)
+        .environmentObject(PathModel())
 }
