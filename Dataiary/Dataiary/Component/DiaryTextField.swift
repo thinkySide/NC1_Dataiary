@@ -19,12 +19,14 @@ struct DiaryTextField: View {
             .pretendard(.regular, 17)
             .padding(.horizontal, 24)
             .focused($isTextFieldFocus)
+            .lineSpacing(16)
     }
 }
 
-//#Preview {
-//    DiaryTextField(
-//        contentText: .constant("DiaryTextField"),
-//        isTextFieldFocus: <#FocusState<Bool>.Binding#>
-//    )
-//}
+#Preview {
+    @FocusState var isTextFieldFocus
+    return DiaryTextField(
+        contentText: .constant("DiaryTextField"),
+        isTextFieldFocus: $isTextFieldFocus
+    )
+}

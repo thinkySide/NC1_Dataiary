@@ -73,7 +73,7 @@ struct ReadDiaryView: View {
                 contentText: $content,
                 isTextFieldFocus: $isTextFieldFocus
             )
-                .disabled(!isEditMode)
+            .disabled(!isEditMode)
             
             Spacer()
             
