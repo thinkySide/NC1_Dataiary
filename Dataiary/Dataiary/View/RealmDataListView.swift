@@ -8,12 +8,21 @@
 import SwiftUI
 
 struct RealmDataListView: View {
+    
+    @EnvironmentObject var pathModel: PathModel
+    
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
+            ScrollView {
+                
+            }
+            .padding(.top, 16)
+            
             Spacer()
-            Text("RealmDataListView")
-                .frame(maxWidth: .infinity)
-            Spacer()
+            
+            DiaryActionButton(title: "add Realm diary.") {
+                
+            }
         }
         .background(Color.background)
     }

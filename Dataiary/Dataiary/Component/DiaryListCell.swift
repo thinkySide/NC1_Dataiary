@@ -23,12 +23,13 @@ struct DiaryListCell: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: 2)
             }
+            .padding(.leading, 24)
             
             Text(content)
                 .pretendard(.regular, 16)
                 .lineSpacing(16)
+                .padding(.horizontal, 24)
         }
-        .padding(.horizontal, 24)
         .padding(.vertical, 24)
         .foregroundStyle(Color.main)
         .background(Color.background)

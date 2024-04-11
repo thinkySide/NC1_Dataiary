@@ -34,7 +34,7 @@ struct MainView: View {
                     selectedTab: $selectedTab
                 )
             }
-            .background(Color.main)
+            .background(Color.background)
         }
         .environmentObject(pathModel)
     }
@@ -56,8 +56,9 @@ private struct DataTabView: View {
             
             SwiftDataListView()
                 .tag(Tab.swiftData)
-            .environmentObject(swiftDataDiarymanager)
+                .environmentObject(swiftDataDiarymanager)
         }
+        .ignoresSafeArea()
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .navigationDestination(for: PathType.self) { path in
             switch path {
