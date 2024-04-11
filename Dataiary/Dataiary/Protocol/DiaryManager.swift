@@ -29,5 +29,8 @@ protocol DiaryManager: ObservableObject {
 /// Diary 매니저가 발생시킬 수 있는 에러
 enum DiaryError: Error {
     case notFound // 데이터 찾을 수 없음
+    case noData // 데이터 없음
     case cannotSave // 저장할 수 없음
+    case cannotUpdate // 업데이트 할 수 없음
+    case cannotDelete // 삭제할 수 없음
 }

@@ -61,8 +61,8 @@ private struct DataTabView: View {
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .navigationDestination(for: PathType.self) { path in
             switch path {
-            case .read(let diaryManager):
-                ReadDiaryView()
+            case .read(let diaryManager, let diary):
+                ReadDiaryView(diaryManager: diaryManager, diary: diary)
                 
             case .write(let diaryManager):
                 WriteDiaryView(diaryManager: diaryManager)

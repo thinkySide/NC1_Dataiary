@@ -9,8 +9,8 @@ import Foundation
 
 /// Navigation Path 타입 열거형
 enum PathType: Hashable {
+    case read(diaryManager: any DiaryManager, diary: Diary)
     case write(diaryManager: any DiaryManager)
-    case read(diaryManager: any DiaryManager)
 }
 
 // MARK: - Hashable 프로토콜 준수를 위한 메서드 구현

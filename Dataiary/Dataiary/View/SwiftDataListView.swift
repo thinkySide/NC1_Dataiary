@@ -22,7 +22,12 @@ struct SwiftDataListView: View {
                         content: diary.content
                     )
                     .onTapGesture {
-                        pathModel.paths.append(.read(diaryManager: diaryManager))
+                        pathModel.paths.append(
+                            .read(
+                                diaryManager: diaryManager,
+                                diary: diary
+                            )
+                        )
                     }
                 }
             }

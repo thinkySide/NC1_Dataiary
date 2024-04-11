@@ -54,6 +54,12 @@ struct WriteDiaryView: View {
 }
 
 #Preview {
-    WriteDiaryView(diaryManager: SwiftDataDiaryManager(modelContext: MockModelContainer.mockModelContainer.mainContext))
-        .environmentObject(PathModel())
+    WriteDiaryView(
+        diaryManager: SwiftDataDiaryManager(
+            modelContext: MockModelContainer.mockModelContainer.mainContext
+        )
+    )
+    .environmentObject(
+        PathModel()
+    )
 }

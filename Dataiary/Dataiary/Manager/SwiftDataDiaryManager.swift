@@ -9,7 +9,9 @@ import SwiftUI
 import SwiftData
 
 final class SwiftDataDiaryManager: DiaryManager {
-    @Query private var diarys: [SwiftDataDiary]
+    
+    @Published private var diarys: [Diary] = []
+    
     private let modelContext: ModelContext
     
     init(modelContext: ModelContext) {
@@ -24,9 +26,35 @@ extension SwiftDataDiaryManager {
     private func saveData() throws {
         do {
             try modelContext.save()
+            diarys = fetchList()
         } catch {
             throw DiaryError.cannotSave
         }
+    }
+    
+    /// Diary 타입을 SwiftDataDiary로 변환 후 반환합니다.
+    private func diaryToSwiftData(_ diary: Diary) throws -> SwiftDataDiary {
+        
+        // 1. 무슨 오류인지는 모르겠지만 해당 값을 한번 변수로 바꿔주고 id값 넣어야 컴파일 오류 안남.
+        let diaryId = diary.id
+        
+        // 2. 동일한 ID값을 가진 SwiftDataDiary 검색 조건 생성
+        let predicate = #Predicate<SwiftDataDiary> { $0.id == diaryId }
+        
+        // 3. FetchDescriptor 설정
+        let descriptor = FetchDescriptor(predicate: predicate)
+        
+        // 4. ModelContext를 이용해 SwiftDataDiary 받아온 후 첫번째 값 삭제
+        do {
+            let swiftDatas = try modelContext.fetch(descriptor)
+            if let swiftDataDiary = swiftDatas.first {
+                return swiftDataDiary
+            }
+        } catch {
+            print("\(DiaryError.notFound)")
+        }
+        
+        throw DiaryError.notFound
     }
 }
 
@@ -53,7 +81,7 @@ extension SwiftDataDiaryManager {
             let swiftDatas = try modelContext.fetch(descriptor)
             diarys = swiftDatas.map { Diary(id: $0.id, date: $0.date, content: $0.content) }
         } catch {
-            // throw DiaryError.notFound
+            print("\(DiaryError.notFound)")
         }
         
         // 5. 최종 반환
@@ -77,10 +105,21 @@ extension SwiftDataDiaryManager {
     }
     
     func update(for diary: Diary) {
-        //
+        do {
+            let swiftDataDiary = try diaryToSwiftData(diary)
+            swiftDataDiary.content = diary.content
+        } catch {
+            print("\(DiaryError.cannotUpdate.localizedDescription)")
+        }
     }
     
     func delete(for diary: Diary) {
-        //
+        do {
+            let swiftDataDiary = try diaryToSwiftData(diary)
+            modelContext.delete(swiftDataDiary)
+            try? saveData()
+        } catch {
+            print("\(DiaryError.cannotDelete.localizedDescription)")
+        }
     }
 }

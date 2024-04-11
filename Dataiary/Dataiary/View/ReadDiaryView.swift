@@ -10,13 +10,22 @@ import SwiftUI
 struct ReadDiaryView: View {
     
     @EnvironmentObject var pathModel: PathModel
-    @State private var content: String = ""
+    @State private var content: String
     @State private var isEditMode = false
+    
+    private let diaryManager: any DiaryManager
+    private var diary: Diary
+    
+    init(diaryManager: any DiaryManager, diary: Diary) {
+        self.diaryManager = diaryManager
+        self.diary = diary
+        self._content = State(wrappedValue: diary.content)
+    }
     
     var body: some View {
         VStack(spacing: 12) {
             DiaryNavigationBar(
-                title: Date().diaryFormat,
+                title: diary.date.diaryFormat,
                 leadingView: {
                     Button("", image: .backIcon) {
                         pathModel.paths.removeLast()
@@ -25,7 +34,13 @@ struct ReadDiaryView: View {
                 trailingView: {
                     if isEditMode {
                         Button {
-                            // TODO: 일기 생성
+                            diaryManager.update(
+                                for: Diary(
+                                    id: diary.id,
+                                    date: diary.date,
+                                    content: content
+                                )
+                            )
                             isEditMode.toggle()
                         } label: {
                             Text("done.")
@@ -66,5 +81,13 @@ struct ReadDiaryView: View {
 }
 
 #Preview {
-    ReadDiaryView()
+    ReadDiaryView(
+        diaryManager: SwiftDataDiaryManager(
+            modelContext: MockModelContainer.mockModelContainer.mainContext
+        ),
+        diary: Diary(id: UUID(), date: Date(), content: "일기입니다.")
+    )
+    .environmentObject(
+        PathModel()
+    )
 }
