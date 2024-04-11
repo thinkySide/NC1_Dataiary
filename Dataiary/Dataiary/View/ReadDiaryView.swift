@@ -12,6 +12,7 @@ struct ReadDiaryView: View {
     @EnvironmentObject var pathModel: PathModel
     @State private var content: String
     @State private var isEditMode = false
+    @State private var isDeleteAlertPresented = false
     
     private let diaryManager: any DiaryManager
     private var diary: Diary
@@ -50,12 +51,21 @@ struct ReadDiaryView: View {
                         .opacity(content.isEmpty ? 0.3 : 1)
                         .disabled(content.isEmpty)
                     } else {
-                        Button("", image: .menuIcon) {
-                            // TODO: 메뉴창 출력
+                        Menu("", image: .menuIcon) {
+                            Button("delete.", role: .destructive) {
+                                isDeleteAlertPresented.toggle()
+                            }
                         }
                     }
                 }
             )
+            .alert("Do you want a delete?", isPresented: $isDeleteAlertPresented) {
+                Button("cancel", role: .cancel) {}
+                Button("delete", role: .destructive) {
+                    diaryManager.delete(for: diary)
+                    pathModel.paths.removeLast()
+                }
+            }
             
             DiaryTextField(contentText: $content)
                 .disabled(!isEditMode)
