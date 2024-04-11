@@ -17,7 +17,7 @@ struct DiaryTabBar: View {
                 TabBarCell(
                     selectedTab: $selectedTab,
                     title: tab.rawValue,
-                    isActive: selectedTab == tab ? true : false
+                    isActive: selectedTab == tab
                 )
             }
         }
@@ -58,8 +58,6 @@ private struct TabBarCell: View {
         }
         .frame(height: 48)
         .opacity(isActive ? 1 : 0.2)
-        .animation(nil, value: selectedTab)
-        
     }
 }
 

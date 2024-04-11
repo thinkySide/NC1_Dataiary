@@ -35,7 +35,7 @@ struct SwiftDataListView: View {
             
             Spacer()
             
-            DiaryActionButton(title: "add diary.") {
+            DiaryActionButton(title: "add SwiftData diary.") {
                 pathModel.paths.append(.write(diaryManager: diaryManager))
             }
         }

@@ -9,7 +9,13 @@ import SwiftUI
 
 struct RealmDataListView: View {
     var body: some View {
-        Text("RealmDataListView")
+        VStack {
+            Spacer()
+            Text("RealmDataListView")
+                .frame(maxWidth: .infinity)
+            Spacer()
+        }
+        .background(Color.background)
     }
 }
 

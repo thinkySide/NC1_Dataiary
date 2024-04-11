@@ -8,5 +8,5 @@
 import Foundation
 
 enum AppInfo {
-    static let name = "Dataiary"
+    static let name = "dataiary"
 }

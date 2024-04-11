@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		826FDD472BC7D44100B9AFDB /* Helper+UINavigationControllerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826FDD462BC7D44100B9AFDB /* Helper+UINavigationControllerSetting.swift */; };
 		827B7DB62BC535B000C56FE5 /* DataiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DB52BC535B000C56FE5 /* DataiaryApp.swift */; };
 		827B7DB82BC535B000C56FE5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DB72BC535B000C56FE5 /* MainView.swift */; };
 		827B7DBC2BC535B100C56FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 827B7DBB2BC535B100C56FE5 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		826FDD462BC7D44100B9AFDB /* Helper+UINavigationControllerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+UINavigationControllerSetting.swift"; sourceTree = "<group>"; };
 		827B7DB22BC535B000C56FE5 /* Dataiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dataiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		827B7DB52BC535B000C56FE5 /* DataiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataiaryApp.swift; sourceTree = "<group>"; };
 		827B7DB72BC535B000C56FE5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				827B7DF12BC680F600C56FE5 /* Helper+NameSpace.swift */,
 				827B7DE12BC6712200C56FE5 /* Helper+CustomFont.swift */,
 				827B7DFB2BC6C22300C56FE5 /* Helper+DateExtension.swift */,
+				826FDD462BC7D44100B9AFDB /* Helper+UINavigationControllerSetting.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				827B7DEE2BC6779100C56FE5 /* DiaryTabBar.swift in Sources */,
 				827B7E022BC6CFD200C56FE5 /* DiaryTextField.swift in Sources */,
 				827B7E042BC6D30F00C56FE5 /* ReadDiaryView.swift in Sources */,
+				826FDD472BC7D44100B9AFDB /* Helper+UINavigationControllerSetting.swift in Sources */,
 				827B7DF02BC67F7F00C56FE5 /* DiaryNavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

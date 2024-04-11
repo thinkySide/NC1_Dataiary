@@ -9,7 +9,13 @@ import SwiftUI
 
 struct CoreDataListView: View {
     var body: some View {
-        Text("CoreDataListView")
+        VStack {
+            Spacer()
+            Text("CoreDataListView")
+                .frame(maxWidth: .infinity)
+            Spacer()
+        }
+        .background(Color.background)
     }
 }
 

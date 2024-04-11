@@ -59,7 +59,5 @@ struct WriteDiaryView: View {
             modelContext: MockModelContainer.mockModelContainer.mainContext
         )
     )
-    .environmentObject(
-        PathModel()
-    )
+    .environmentObject(PathModel())
 }
