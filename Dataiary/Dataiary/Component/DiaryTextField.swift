@@ -14,7 +14,7 @@ struct DiaryTextField: View {
     let placeholder: String = "일기를 작성해주세요."
     
     var body: some View {
-        TextField(placeholder, text: $contentText)
+        TextField(placeholder, text: $contentText, axis: .vertical)
             .pretendard(.regular, 17)
             .padding(.horizontal, 24)
     }

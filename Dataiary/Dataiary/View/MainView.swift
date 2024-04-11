@@ -42,7 +42,7 @@ struct MainView: View {
             .navigationDestination(for: PathType.self) { path in
                 switch path {
                 case .read:
-                    EmptyView()
+                    ReadDiaryView()
                     
                 case .write:
                     WriteDiaryView()

@@ -36,6 +36,7 @@
 		827B7DFE2BC6C3EA00C56FE5 /* WriteDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DFD2BC6C3EA00C56FE5 /* WriteDiaryView.swift */; };
 		827B7E002BC6C55800C56FE5 /* PathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DFF2BC6C55800C56FE5 /* PathType.swift */; };
 		827B7E022BC6CFD200C56FE5 /* DiaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E012BC6CFD200C56FE5 /* DiaryTextField.swift */; };
+		827B7E042BC6D30F00C56FE5 /* ReadDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E032BC6D30F00C56FE5 /* ReadDiaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		827B7DFD2BC6C3EA00C56FE5 /* WriteDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryView.swift; sourceTree = "<group>"; };
 		827B7DFF2BC6C55800C56FE5 /* PathType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathType.swift; sourceTree = "<group>"; };
 		827B7E012BC6CFD200C56FE5 /* DiaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTextField.swift; sourceTree = "<group>"; };
+		827B7E032BC6D30F00C56FE5 /* ReadDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadDiaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				827B7DE82BC676FB00C56FE5 /* RealmDataListView.swift */,
 				827B7DE62BC6763300C56FE5 /* SwiftDataListView.swift */,
 				827B7DFD2BC6C3EA00C56FE5 /* WriteDiaryView.swift */,
+				827B7E032BC6D30F00C56FE5 /* ReadDiaryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				827B7DB62BC535B000C56FE5 /* DataiaryApp.swift in Sources */,
 				827B7DEE2BC6779100C56FE5 /* DiaryTabBar.swift in Sources */,
 				827B7E022BC6CFD200C56FE5 /* DiaryTextField.swift in Sources */,
+				827B7E042BC6D30F00C56FE5 /* ReadDiaryView.swift in Sources */,
 				827B7DF02BC67F7F00C56FE5 /* DiaryNavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

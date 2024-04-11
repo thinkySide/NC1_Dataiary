@@ -10,7 +10,6 @@ import SwiftUI
 struct WriteDiaryView: View {
     
     @EnvironmentObject var pathModel: PathModel
-    
     @State private var content: String = ""
     
     var body: some View {
@@ -25,6 +24,7 @@ struct WriteDiaryView: View {
                 trailingView: {
                     Button {
                         // TODO: 일기 생성
+                        pathModel.paths.removeLast()
                     } label: {
                         Text("done.")
                             .pretendard(.bold, 14)

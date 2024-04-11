@@ -29,7 +29,9 @@ struct DiaryListCell: View {
                 .lineSpacing(16)
         }
         .padding(.horizontal, 24)
+        .padding(.vertical, 24)
         .foregroundStyle(Color.main)
+        .background(Color.background)
     }
 }
 
