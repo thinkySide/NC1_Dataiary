@@ -10,6 +10,7 @@ import SwiftUI
 struct DiaryTextField: View {
     
     @Binding var contentText: String
+    @FocusState.Binding var isTextFieldFocus: Bool
     
     let placeholder: String = "일기를 작성해주세요."
     
@@ -17,9 +18,13 @@ struct DiaryTextField: View {
         TextField(placeholder, text: $contentText, axis: .vertical)
             .pretendard(.regular, 17)
             .padding(.horizontal, 24)
+            .focused($isTextFieldFocus)
     }
 }
 
-#Preview {
-    DiaryTextField(contentText: .constant("DiaryTextField"))
-}
+//#Preview {
+//    DiaryTextField(
+//        contentText: .constant("DiaryTextField"),
+//        isTextFieldFocus: <#FocusState<Bool>.Binding#>
+//    )
+//}

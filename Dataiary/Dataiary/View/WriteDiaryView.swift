@@ -12,6 +12,7 @@ struct WriteDiaryView: View {
     
     @EnvironmentObject var pathModel: PathModel
     @State private var content: String = ""
+    @FocusState private var isTextFieldFocus: Bool
     
     private let diaryManager: any DiaryManager
     
@@ -32,7 +33,13 @@ struct WriteDiaryView: View {
                 },
                 trailingView: {
                     Button {
-                        diaryManager.create(Diary(id: UUID(), date: creationDate, content: content))
+                        diaryManager.create(
+                            Diary(
+                                id: UUID(),
+                                date: creationDate,
+                                content: content
+                            )
+                        )
                         pathModel.paths.removeLast()
                     } label: {
                         Text("done.")
@@ -44,12 +51,18 @@ struct WriteDiaryView: View {
                 }
             )
             
-            DiaryTextField(contentText: $content)
+            DiaryTextField(
+                contentText: $content,
+                isTextFieldFocus: $isTextFieldFocus
+            )
             
             Spacer()
         }
         .background(Color.background)
         .navigationBarBackButtonHidden()
+        .onAppear {
+            isTextFieldFocus = true
+        }
     }
 }
 

@@ -13,6 +13,7 @@ struct ReadDiaryView: View {
     @State private var content: String
     @State private var isEditMode = false
     @State private var isDeleteAlertPresented = false
+    @FocusState private var isTextFieldFocus: Bool
     
     private let diaryManager: any DiaryManager
     private var diary: Diary
@@ -35,6 +36,7 @@ struct ReadDiaryView: View {
                 trailingView: {
                     if isEditMode {
                         Button {
+                            isTextFieldFocus.toggle()
                             diaryManager.update(
                                 for: Diary(
                                     id: diary.id,
@@ -67,7 +69,10 @@ struct ReadDiaryView: View {
                 }
             }
             
-            DiaryTextField(contentText: $content)
+            DiaryTextField(
+                contentText: $content,
+                isTextFieldFocus: $isTextFieldFocus
+            )
                 .disabled(!isEditMode)
             
             Spacer()
@@ -77,6 +82,7 @@ struct ReadDiaryView: View {
                 
                 Button {
                     isEditMode.toggle()
+                    isTextFieldFocus.toggle()
                 } label: {
                     Text("edit.")
                         .pretendard(.black, 24)
