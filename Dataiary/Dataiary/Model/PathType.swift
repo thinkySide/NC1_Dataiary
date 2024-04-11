@@ -7,9 +7,16 @@
 
 import Foundation
 
-enum PathType {
-    case write
-    case read
+/// Navigation Path 타입 열거형
+enum PathType: Hashable {
+    case write(diaryManager: any DiaryManager)
+    case read(diaryManager: any DiaryManager)
+}
+
+// MARK: - Hashable 프로토콜 준수를 위한 메서드 구현
+extension PathType {
+    static func == (lhs: PathType, rhs: PathType) -> Bool { return true }
+    func hash(into hasher: inout Hasher) {}
 }
 
 final class PathModel: ObservableObject {

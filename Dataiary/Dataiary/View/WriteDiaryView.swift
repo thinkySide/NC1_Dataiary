@@ -11,12 +11,15 @@ import SwiftData
 struct WriteDiaryView: View {
     
     @EnvironmentObject var pathModel: PathModel
-    
-    @Environment(\.modelContext) private var modelContext
-    
     @State private var content: String = ""
     
+    private let diaryManager: any DiaryManager
+    
     let creationDate = Date()
+    
+    init(diaryManager: any DiaryManager) {
+        self.diaryManager = diaryManager
+    }
     
     var body: some View {
         VStack(spacing: 12) {
@@ -29,7 +32,7 @@ struct WriteDiaryView: View {
                 },
                 trailingView: {
                     Button {
-                        create()
+                        diaryManager.create(Diary(id: UUID(), date: creationDate, content: content))
                         pathModel.paths.removeLast()
                     } label: {
                         Text("done.")
@@ -48,23 +51,9 @@ struct WriteDiaryView: View {
         .background(Color.background)
         .navigationBarBackButtonHidden()
     }
-    
-    func create() {
-        // 1. Diary를 SwiftDataDiary로 변환
-        let swiftDataDiary = SwiftDataDiary(
-            id: UUID(),
-            date: creationDate,
-            content: content
-        )
-        
-        // 2. ModelContext를 이용해 삽입
-        modelContext.insert(swiftDataDiary)
-        
-        // 3. 변경사항 저장
-        try? modelContext.save()
-    }
 }
 
 #Preview {
-    WriteDiaryView()
+    WriteDiaryView(diaryManager: SwiftDataDiaryManager(modelContext: MockModelContainer.mockModelContainer.mainContext))
+        .environmentObject(PathModel())
 }

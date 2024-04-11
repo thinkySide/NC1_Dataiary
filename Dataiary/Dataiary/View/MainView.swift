@@ -55,17 +55,17 @@ private struct DataTabView: View {
                 .tag(Tab.realm)
             
             SwiftDataListView()
-            .tag(Tab.swiftData)
+                .tag(Tab.swiftData)
             .environmentObject(swiftDataDiarymanager)
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .navigationDestination(for: PathType.self) { path in
             switch path {
-            case .read:
+            case .read(let diaryManager):
                 ReadDiaryView()
                 
-            case .write:
-                WriteDiaryView()
+            case .write(let diaryManager):
+                WriteDiaryView(diaryManager: diaryManager)
             }
         }
     }

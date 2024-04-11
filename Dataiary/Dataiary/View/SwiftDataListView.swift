@@ -22,7 +22,7 @@ struct SwiftDataListView: View {
                         content: diary.content
                     )
                     .onTapGesture {
-                        pathModel.paths.append(.read)
+                        pathModel.paths.append(.read(diaryManager: diaryManager))
                     }
                 }
             }
@@ -31,13 +31,19 @@ struct SwiftDataListView: View {
             Spacer()
             
             DiaryActionButton(title: "add diary.") {
-                pathModel.paths.append(.write)
+                pathModel.paths.append(.write(diaryManager: diaryManager))
             }
         }
         .background(Color.background)
     }
 }
 
-//#Preview {
-//    SwiftDataListView(diaryManager: <#SwiftDataDiaryManager#>)
-//}
+#Preview {
+    SwiftDataListView()
+        .environmentObject(PathModel())
+        .environmentObject(
+            SwiftDataDiaryManager(
+                modelContext: MockModelContainer.mockModelContainer.mainContext
+            )
+        )
+}

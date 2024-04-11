@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-final class SwiftDataDiaryManager: DiaryManager, ObservableObject {
+final class SwiftDataDiaryManager: DiaryManager {
     @Query private var diarys: [SwiftDataDiary]
     private let modelContext: ModelContext
     

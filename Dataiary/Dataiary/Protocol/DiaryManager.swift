@@ -8,13 +8,13 @@
 import Foundation
 
 /// Diary 관리를 위한 매니징 프로토콜
-protocol DiaryManager {
+protocol DiaryManager: ObservableObject {
     
     /// Diary를 반환합니다.
     func fetch(with index: Int) -> Diary
     
     /// Diary List를 반환합니다.
-    func fetchList() throws -> [Diary]
+    func fetchList() -> [Diary]
     
     /// Diary를 생성합니다.
     func create(_ diary: Diary)
