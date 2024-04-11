@@ -61,10 +61,7 @@ extension SwiftDataDiaryManager {
 // MARK: - Protocol Function
 extension SwiftDataDiaryManager {
     
-    func fetch(with index: Int) -> Diary {
-        fatalError()
-    }
-    
+    /// Diary List를 반환합니다.
     func fetchList() -> [Diary] {
         
         // 1. 최종 반환할 Diary 배열
@@ -88,6 +85,7 @@ extension SwiftDataDiaryManager {
         return diarys
     }
     
+    /// Diary Lis를 생성합니다.
     func create(_ diary: Diary) {
         
         // 1. Diary를 SwiftDataDiary로 변환
@@ -104,6 +102,7 @@ extension SwiftDataDiaryManager {
         try? saveData()
     }
     
+    /// Diary List를 업데이트합니다.
     func update(for diary: Diary) {
         do {
             let swiftDataDiary = try diaryToSwiftData(diary)
@@ -113,6 +112,7 @@ extension SwiftDataDiaryManager {
         }
     }
     
+    /// Diary List를 삭제합니다.
     func delete(for diary: Diary) {
         do {
             let swiftDataDiary = try diaryToSwiftData(diary)

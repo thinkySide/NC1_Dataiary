@@ -47,6 +47,8 @@ struct ReadDiaryView: View {
                                 .pretendard(.bold, 14)
                                 .foregroundStyle(Color.main)
                         }
+                        .opacity(content.isEmpty ? 0.3 : 1)
+                        .disabled(content.isEmpty)
                     } else {
                         Button("", image: .menuIcon) {
                             // TODO: 메뉴창 출력

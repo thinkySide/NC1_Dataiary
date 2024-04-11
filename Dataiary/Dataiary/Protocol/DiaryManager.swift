@@ -10,9 +10,6 @@ import Foundation
 /// Diary 관리를 위한 매니징 프로토콜
 protocol DiaryManager: ObservableObject {
     
-    /// Diary를 반환합니다.
-    func fetch(with index: Int) -> Diary
-    
     /// Diary List를 반환합니다.
     func fetchList() -> [Diary]
     
