@@ -6,20 +6,26 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SwiftDataListView: View {
     
     @EnvironmentObject var pathModel: PathModel
     
+    @Environment(\.modelContext) private var modelContext
+    @Query private var diarys: [SwiftDataDiary]
+    
     var body: some View {
         VStack(spacing: 0) {
             ScrollView {
-                DiaryListCell(date: Date(), content: "안녕하세요, 일기입니다.")
-                    .onTapGesture {
-                        pathModel.paths.append(.read)
-                    }
+                ForEach(diarys) { diary in
+                    DiaryListCell(date: diary.date, content: diary.content)
+                        .onTapGesture {
+                            pathModel.paths.append(.read)
+                        }
+                }
             }
-            .padding(.top, 40)
+            .padding(.top, 16)
             
             Spacer()
             

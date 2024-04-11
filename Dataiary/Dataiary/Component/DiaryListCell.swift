@@ -13,7 +13,7 @@ struct DiaryListCell: View {
     let content: String
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 16) {
             HStack(spacing: 8) {
                 Text(date.diaryFormat)
                     .pretendard(.black, 17)

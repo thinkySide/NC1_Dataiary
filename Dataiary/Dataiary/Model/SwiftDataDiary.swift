@@ -10,9 +10,9 @@ import SwiftData
 
 @Model
 class SwiftDataDiary: Identifiable {
-    let id: UUID
-    let date: Date
-    let content: String
+    @Attribute(.unique) let id: UUID
+    var date: Date
+    var content: String
     
     init(id: UUID, date: Date, content: String) {
         self.id = id

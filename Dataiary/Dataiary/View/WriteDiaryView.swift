@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct WriteDiaryView: View {
     
     @EnvironmentObject var pathModel: PathModel
+    
+    @Environment(\.modelContext) private var modelContext
+    @Query private var diarys: [SwiftDataDiary]
+    
     @State private var content: String = ""
     
     var body: some View {
@@ -23,7 +28,7 @@ struct WriteDiaryView: View {
                 },
                 trailingView: {
                     Button {
-                        // TODO: 일기 생성
+                        create()
                         pathModel.paths.removeLast()
                     } label: {
                         Text("done.")
@@ -41,6 +46,21 @@ struct WriteDiaryView: View {
         }
         .background(Color.background)
         .navigationBarBackButtonHidden()
+    }
+    
+    func create() {
+        // 1. Diary를 SwiftDataDiary로 변환
+        let swiftDataDiary = SwiftDataDiary(
+            id: UUID(),
+            date: Date(),
+            content: content
+        )
+        
+        // 2. ModelContext를 이용해 삽입
+        modelContext.insert(swiftDataDiary)
+        
+        // 3. 변경사항 저장
+        try? modelContext.save()
     }
 }
 
