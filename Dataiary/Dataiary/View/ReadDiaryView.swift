@@ -86,7 +86,7 @@ struct ReadDiaryView: View {
                 } label: {
                     Text("edit.")
                         .pretendard(.black, 24)
-                        .foregroundStyle(Color.main)
+                        .foregroundStyle(Color.brand)
                 }
             }
             .padding(.horizontal, 32)
