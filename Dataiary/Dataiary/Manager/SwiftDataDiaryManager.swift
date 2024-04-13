@@ -68,7 +68,7 @@ extension SwiftDataDiaryManager {
         var diarys: [Diary] = []
         
         // 2. Date를 기준으로 Sorting 규칙 생성
-        let sort = [SortDescriptor<SwiftDataDiary>(\.date, order: .forward)]
+        let sort = [SortDescriptor<SwiftDataDiary>(\.date, order: .reverse)]
         
         // 3. FetchDescriptor 설정
         let descriptor = FetchDescriptor(sortBy: sort)
