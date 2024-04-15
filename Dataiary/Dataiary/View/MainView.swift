@@ -47,21 +47,20 @@ struct MainView: View {
 private struct DataTabView: View {
     
     @StateObject var coreDataDiaryManager: CoreDataDiaryManager
+    @StateObject var realDataDiaryManager: RealmDiaryManager = .init()
     @StateObject var swiftDataDiarymanager: SwiftDiaryManager
     @Binding var selectedTab: Tab
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            CoreDataListView()
+            ListDiaryView(diaryManager: coreDataDiaryManager)
                 .tag(Tab.coreData)
-                .environmentObject(coreDataDiaryManager)
             
-            RealmDataListView()
+            ListDiaryView(diaryManager: realDataDiaryManager)
                 .tag(Tab.realm)
             
-            SwiftDataListView()
+            ListDiaryView(diaryManager: swiftDataDiarymanager)
                 .tag(Tab.swiftData)
-                .environmentObject(swiftDataDiarymanager)
         }
         .ignoresSafeArea()
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

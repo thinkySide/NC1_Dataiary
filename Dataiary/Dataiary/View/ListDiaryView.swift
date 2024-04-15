@@ -1,16 +1,21 @@
 //
-//  CoreDataListView.swift
+//  ListDiaryView.swift
 //  Dataiary
 //
-//  Created by 김민준 on 4/10/24.
+//  Created by 김민준 on 4/15/24.
 //
 
 import SwiftUI
 
-struct CoreDataListView: View {
+struct ListDiaryView: View {
     
     @EnvironmentObject var pathModel: PathModel
-    @EnvironmentObject var diaryManager: CoreDataDiaryManager
+    
+    private let diaryManager: any DiaryManager
+    
+    init(diaryManager: any DiaryManager) {
+        self.diaryManager = diaryManager
+    }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -34,7 +39,7 @@ struct CoreDataListView: View {
             
             Spacer()
             
-            DiaryActionButton(title: "add CoreData diary.") {
+            DiaryActionButton(title: "add SwiftData diary.") {
                 pathModel.paths.append(.write(diaryManager: diaryManager))
             }
         }
@@ -43,5 +48,9 @@ struct CoreDataListView: View {
 }
 
 #Preview {
-    CoreDataListView()
+    ListDiaryView(
+        diaryManager: SwiftDiaryManager(
+            modelContext: MockModelContainer.mockModelContainer.mainContext
+        )
+    )
 }

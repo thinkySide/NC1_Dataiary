@@ -26,9 +26,6 @@
 		827B7DDE2BC66FBE00C56FE5 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 827B7DD52BC66FBE00C56FE5 /* Pretendard-Thin.otf */; };
 		827B7DE22BC6712200C56FE5 /* Helper+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DE12BC6712200C56FE5 /* Helper+CustomFont.swift */; };
 		827B7DE52BC6753B00C56FE5 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DE42BC6753B00C56FE5 /* Tab.swift */; };
-		827B7DE72BC6763300C56FE5 /* SwiftDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DE62BC6763300C56FE5 /* SwiftDataListView.swift */; };
-		827B7DE92BC676FB00C56FE5 /* RealmDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DE82BC676FB00C56FE5 /* RealmDataListView.swift */; };
-		827B7DEB2BC6771800C56FE5 /* CoreDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DEA2BC6771800C56FE5 /* CoreDataListView.swift */; };
 		827B7DEE2BC6779100C56FE5 /* DiaryTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DED2BC6779100C56FE5 /* DiaryTabBar.swift */; };
 		827B7DF02BC67F7F00C56FE5 /* DiaryNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DEF2BC67F7F00C56FE5 /* DiaryNavigationBar.swift */; };
 		827B7DF22BC680F600C56FE5 /* Helper+NameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DF12BC680F600C56FE5 /* Helper+NameSpace.swift */; };
@@ -51,6 +48,7 @@
 		82E776D82BCD53E000D10E2E /* CoreDataDiary+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776D62BCD53E000D10E2E /* CoreDataDiary+CoreDataProperties.swift */; };
 		82E776DB2BCD549000D10E2E /* CoreDataDiaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776DA2BCD549000D10E2E /* CoreDataDiaryManager.swift */; };
 		82E776DD2BCD551700D10E2E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776DC2BCD551700D10E2E /* PersistenceController.swift */; };
+		82E776DF2BCD6C8600D10E2E /* ListDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776DE2BCD6C8600D10E2E /* ListDiaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,9 +71,6 @@
 		827B7DDF2BC66FE900C56FE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		827B7DE12BC6712200C56FE5 /* Helper+CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+CustomFont.swift"; sourceTree = "<group>"; };
 		827B7DE42BC6753B00C56FE5 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
-		827B7DE62BC6763300C56FE5 /* SwiftDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataListView.swift; sourceTree = "<group>"; };
-		827B7DE82BC676FB00C56FE5 /* RealmDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataListView.swift; sourceTree = "<group>"; };
-		827B7DEA2BC6771800C56FE5 /* CoreDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataListView.swift; sourceTree = "<group>"; };
 		827B7DED2BC6779100C56FE5 /* DiaryTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTabBar.swift; sourceTree = "<group>"; };
 		827B7DEF2BC67F7F00C56FE5 /* DiaryNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryNavigationBar.swift; sourceTree = "<group>"; };
 		827B7DF12BC680F600C56FE5 /* Helper+NameSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+NameSpace.swift"; sourceTree = "<group>"; };
@@ -98,6 +93,7 @@
 		82E776D62BCD53E000D10E2E /* CoreDataDiary+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataDiary+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		82E776DA2BCD549000D10E2E /* CoreDataDiaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDiaryManager.swift; sourceTree = "<group>"; };
 		82E776DC2BCD551700D10E2E /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		82E776DE2BCD6C8600D10E2E /* ListDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDiaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,9 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				827B7DB72BC535B000C56FE5 /* MainView.swift */,
-				827B7DEA2BC6771800C56FE5 /* CoreDataListView.swift */,
-				827B7DE82BC676FB00C56FE5 /* RealmDataListView.swift */,
-				827B7DE62BC6763300C56FE5 /* SwiftDataListView.swift */,
+				82E776DE2BCD6C8600D10E2E /* ListDiaryView.swift */,
 				827B7DFD2BC6C3EA00C56FE5 /* WriteDiaryView.swift */,
 				827B7E032BC6D30F00C56FE5 /* ReadDiaryView.swift */,
 			);
@@ -371,8 +365,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				82E776D82BCD53E000D10E2E /* CoreDataDiary+CoreDataProperties.swift in Sources */,
-				827B7DE72BC6763300C56FE5 /* SwiftDataListView.swift in Sources */,
 				827B7DFC2BC6C22300C56FE5 /* Helper+DateExtension.swift in Sources */,
+				82E776DF2BCD6C8600D10E2E /* ListDiaryView.swift in Sources */,
 				827B7E072BC777B800C56FE5 /* SwiftDiaryManager.swift in Sources */,
 				827B7DFE2BC6C3EA00C56FE5 /* WriteDiaryView.swift in Sources */,
 				82E776D72BCD53E000D10E2E /* CoreDataDiary+CoreDataClass.swift in Sources */,
@@ -383,8 +377,6 @@
 				827B7DB82BC535B000C56FE5 /* MainView.swift in Sources */,
 				827B7DFA2BC6BFCD00C56FE5 /* SwiftDataDiary.swift in Sources */,
 				82E776D12BCCB32E00D10E2E /* RealmDiaryManager.swift in Sources */,
-				827B7DE92BC676FB00C56FE5 /* RealmDataListView.swift in Sources */,
-				827B7DEB2BC6771800C56FE5 /* CoreDataListView.swift in Sources */,
 				827B7E002BC6C55800C56FE5 /* PathType.swift in Sources */,
 				827B7DF22BC680F600C56FE5 /* Helper+NameSpace.swift in Sources */,
 				827B7DE52BC6753B00C56FE5 /* Tab.swift in Sources */,
