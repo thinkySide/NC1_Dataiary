@@ -10,9 +10,6 @@ import RealmSwift
 
 final class RealmDiaryManager: DiaryManager {
     
-    /// Diary 배열
-    @Published private var diarys: [Diary] = []
-    
     /// Realm
     private var realm = try! Realm()
 }

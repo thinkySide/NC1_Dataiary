@@ -30,6 +30,19 @@ extension CoreDataDiaryManager {
         }
     }
     
+    /// CoreDataDiary를 반환합니다.
+    private func coreDataDiary(for id: UUID) -> CoreDataDiary? {
+        let fetchRequest = CoreDataDiary.fetchRequest()
+        
+        do {
+            let coreDataDiarys = try context.fetch(fetchRequest)
+            return coreDataDiarys.first(where: { $0.id == id })
+        } catch {
+            print(DiaryError.notFound)
+            return nil
+        }
+    }
+    
     /// CoreDataDiary 타입을 Diary 타입으로 변환후 배열로 반환합니다.
     private func toDiarys(from coreDataDiarys: [CoreDataDiary]) -> [Diary] {
         var diarys: [Diary] = []
@@ -77,10 +90,33 @@ extension CoreDataDiaryManager {
     }
     
     func update(for diary: Diary) {
-        //
+        
+        // CoreDataDiary ID값으로 반환
+        guard let coreDatadiary = coreDataDiary(for: diary.id) else {
+            print(DiaryError.notFound)
+            return
+        }
+        
+        // 정보 업데이트
+        coreDatadiary.date = diary.date
+        coreDatadiary.content = diary.content
+        
+        // 저장
+        saveContext()
     }
     
     func delete(for diary: Diary) {
-        //
+        
+        // CoreDataDiary ID값으로 반환
+        guard let coreDatadiary = coreDataDiary(for: diary.id) else {
+            print(DiaryError.notFound)
+            return
+        }
+        
+        // 데이터 삭제
+        context.delete(coreDatadiary)
+        
+        // 저장
+        saveContext()
     }
 }

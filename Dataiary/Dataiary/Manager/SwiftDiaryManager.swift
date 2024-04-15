@@ -10,9 +10,6 @@ import SwiftData
 
 final class SwiftDiaryManager: DiaryManager {
     
-    /// Diary 배열
-    @Published private var diarys: [Diary] = []
-    
     /// ModelContext
     private let modelContext: ModelContext
     
@@ -28,7 +25,6 @@ extension SwiftDiaryManager {
     private func saveData() throws {
         do {
             try modelContext.save()
-            diarys = fetchList()
         } catch {
             throw DiaryError.cannotSave
         }
