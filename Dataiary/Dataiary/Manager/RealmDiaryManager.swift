@@ -50,10 +50,33 @@ extension RealmDiaryManager {
     }
     
     func update(for diary: Diary) {
-        //
+        
+        // Realm 데이터 생성
+        guard let realmDiary = realm.object(ofType: RealmDiary.self, forPrimaryKey: diary.id) else {
+            print(DiaryError.notFound)
+            return
+        }
+        
+        // Realm 데이터베이스 업데이트
+        try? realm.write {
+            realmDiary.date = diary.date
+            realmDiary.content = diary.content
+        }
     }
     
     func delete(for diary: Diary) {
-        //
+        
+        let a = realm.object(ofType: RealmDiary.self, forPrimaryKey: diary.id)
+        
+        // Realm 데이터 생성
+        guard let realmDiary = realm.object(ofType: RealmDiary.self, forPrimaryKey: diary.id) else {
+            print(DiaryError.notFound)
+            return
+        }
+        
+        // Realm 데이터베이스 업데이트
+        try? realm.write {
+            realm.delete(realmDiary)
+        }
     }
 }
