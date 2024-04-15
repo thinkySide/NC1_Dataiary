@@ -10,18 +10,32 @@ import SwiftUI
 struct CoreDataListView: View {
     
     @EnvironmentObject var pathModel: PathModel
+    @EnvironmentObject var diaryManager: CoreDataDiaryManager
     
     var body: some View {
         VStack(spacing: 0) {
             ScrollView {
-                
+                ForEach(diaryManager.fetchList()) { diary in
+                    DiaryListCell(
+                        date: diary.date,
+                        content: diary.content
+                    )
+                    .onTapGesture {
+                        pathModel.paths.append(
+                            .read(
+                                diaryManager: diaryManager,
+                                diary: diary
+                            )
+                        )
+                    }
+                }
             }
             .padding(.top, 16)
             
             Spacer()
             
             DiaryActionButton(title: "add CoreData diary.") {
-                
+                pathModel.paths.append(.write(diaryManager: diaryManager))
             }
         }
         .background(Color.background)

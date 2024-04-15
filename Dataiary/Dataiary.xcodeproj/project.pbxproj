@@ -46,6 +46,11 @@
 		827B7E112BC7A9A800C56FE5 /* MockModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E102BC7A9A800C56FE5 /* MockModelContainer.swift */; };
 		82E776CF2BCCB1C700D10E2E /* RealmDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776CE2BCCB1C700D10E2E /* RealmDiary.swift */; };
 		82E776D12BCCB32E00D10E2E /* RealmDiaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776D02BCCB32E00D10E2E /* RealmDiaryManager.swift */; };
+		82E776D42BCD52B000D10E2E /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82E776D22BCD52B000D10E2E /* CoreDataModel.xcdatamodeld */; };
+		82E776D72BCD53E000D10E2E /* CoreDataDiary+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776D52BCD53E000D10E2E /* CoreDataDiary+CoreDataClass.swift */; };
+		82E776D82BCD53E000D10E2E /* CoreDataDiary+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776D62BCD53E000D10E2E /* CoreDataDiary+CoreDataProperties.swift */; };
+		82E776DB2BCD549000D10E2E /* CoreDataDiaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776DA2BCD549000D10E2E /* CoreDataDiaryManager.swift */; };
+		82E776DD2BCD551700D10E2E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776DC2BCD551700D10E2E /* PersistenceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +93,11 @@
 		827B7E102BC7A9A800C56FE5 /* MockModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModelContainer.swift; sourceTree = "<group>"; };
 		82E776CE2BCCB1C700D10E2E /* RealmDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDiary.swift; sourceTree = "<group>"; };
 		82E776D02BCCB32E00D10E2E /* RealmDiaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDiaryManager.swift; sourceTree = "<group>"; };
+		82E776D32BCD52B000D10E2E /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		82E776D52BCD53E000D10E2E /* CoreDataDiary+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataDiary+CoreDataClass.swift"; sourceTree = "<group>"; };
+		82E776D62BCD53E000D10E2E /* CoreDataDiary+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataDiary+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		82E776DA2BCD549000D10E2E /* CoreDataDiaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDiaryManager.swift; sourceTree = "<group>"; };
+		82E776DC2BCD551700D10E2E /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +134,7 @@
 			children = (
 				827B7DC62BC66D9E00C56FE5 /* App */,
 				827B7DC72BC66DAF00C56FE5 /* Model */,
+				82E776D92BCD53F400D10E2E /* CoreData */,
 				827B7E082BC7783C00C56FE5 /* Protocol */,
 				827B7E052BC7779C00C56FE5 /* Manager */,
 				827B7DC52BC66D7F00C56FE5 /* View */,
@@ -238,6 +249,7 @@
 		827B7E052BC7779C00C56FE5 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				82E776DA2BCD549000D10E2E /* CoreDataDiaryManager.swift */,
 				82E776D02BCCB32E00D10E2E /* RealmDiaryManager.swift */,
 				827B7E062BC777B800C56FE5 /* SwiftDiaryManager.swift */,
 			);
@@ -258,6 +270,17 @@
 				827B7E102BC7A9A800C56FE5 /* MockModelContainer.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		82E776D92BCD53F400D10E2E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				82E776D22BCD52B000D10E2E /* CoreDataModel.xcdatamodeld */,
+				82E776D52BCD53E000D10E2E /* CoreDataDiary+CoreDataClass.swift */,
+				82E776D62BCD53E000D10E2E /* CoreDataDiary+CoreDataProperties.swift */,
+				82E776DC2BCD551700D10E2E /* PersistenceController.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,13 +370,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82E776D82BCD53E000D10E2E /* CoreDataDiary+CoreDataProperties.swift in Sources */,
 				827B7DE72BC6763300C56FE5 /* SwiftDataListView.swift in Sources */,
 				827B7DFC2BC6C22300C56FE5 /* Helper+DateExtension.swift in Sources */,
 				827B7E072BC777B800C56FE5 /* SwiftDiaryManager.swift in Sources */,
 				827B7DFE2BC6C3EA00C56FE5 /* WriteDiaryView.swift in Sources */,
+				82E776D72BCD53E000D10E2E /* CoreDataDiary+CoreDataClass.swift in Sources */,
 				827B7DF62BC6BBC000C56FE5 /* DiaryActionButton.swift in Sources */,
 				82E776CF2BCCB1C700D10E2E /* RealmDiary.swift in Sources */,
 				827B7E0A2BC7785900C56FE5 /* DiaryManager.swift in Sources */,
+				82E776DD2BCD551700D10E2E /* PersistenceController.swift in Sources */,
 				827B7DB82BC535B000C56FE5 /* MainView.swift in Sources */,
 				827B7DFA2BC6BFCD00C56FE5 /* SwiftDataDiary.swift in Sources */,
 				82E776D12BCCB32E00D10E2E /* RealmDiaryManager.swift in Sources */,
@@ -363,6 +389,7 @@
 				827B7DF22BC680F600C56FE5 /* Helper+NameSpace.swift in Sources */,
 				827B7DE52BC6753B00C56FE5 /* Tab.swift in Sources */,
 				827B7E112BC7A9A800C56FE5 /* MockModelContainer.swift in Sources */,
+				82E776D42BCD52B000D10E2E /* CoreDataModel.xcdatamodeld in Sources */,
 				827B7DF82BC6BF8000C56FE5 /* DiaryListCell.swift in Sources */,
 				827B7E0C2BC778B400C56FE5 /* Diary.swift in Sources */,
 				827B7DE22BC6712200C56FE5 /* Helper+CustomFont.swift in Sources */,
@@ -370,6 +397,7 @@
 				827B7DEE2BC6779100C56FE5 /* DiaryTabBar.swift in Sources */,
 				827B7E022BC6CFD200C56FE5 /* DiaryTextField.swift in Sources */,
 				827B7E042BC6D30F00C56FE5 /* ReadDiaryView.swift in Sources */,
+				82E776DB2BCD549000D10E2E /* CoreDataDiaryManager.swift in Sources */,
 				826FDD472BC7D44100B9AFDB /* Helper+UINavigationControllerSetting.swift in Sources */,
 				827B7DF02BC67F7F00C56FE5 /* DiaryNavigationBar.swift in Sources */,
 			);
@@ -603,6 +631,19 @@
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		82E776D22BCD52B000D10E2E /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				82E776D32BCD52B000D10E2E /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 82E776D32BCD52B000D10E2E /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 827B7DAA2BC535B000C56FE5 /* Project object */;
 }

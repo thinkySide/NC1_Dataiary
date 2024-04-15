@@ -15,6 +15,8 @@ struct MainView: View {
     /// 현재 선택된 Tab
     @State private var selectedTab: Tab = .swiftData
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
     /// SwiftData에서 사용할 ModelContext
     @Environment(\.modelContext) private var modelContext
     
@@ -30,6 +32,7 @@ struct MainView: View {
                 DiaryTabBar(selectedTab: $selectedTab)
                 
                 DataTabView(
+                    coreDataDiaryManager: CoreDataDiaryManager(context: managedObjectContext),
                     swiftDataDiarymanager: SwiftDiaryManager(modelContext: modelContext),
                     selectedTab: $selectedTab
                 )
@@ -43,6 +46,7 @@ struct MainView: View {
 // MARK: - DataTabView
 private struct DataTabView: View {
     
+    @StateObject var coreDataDiaryManager: CoreDataDiaryManager
     @StateObject var swiftDataDiarymanager: SwiftDiaryManager
     @Binding var selectedTab: Tab
     
@@ -50,6 +54,7 @@ private struct DataTabView: View {
         TabView(selection: $selectedTab) {
             CoreDataListView()
                 .tag(Tab.coreData)
+                .environmentObject(coreDataDiaryManager)
             
             RealmDataListView()
                 .tag(Tab.realm)

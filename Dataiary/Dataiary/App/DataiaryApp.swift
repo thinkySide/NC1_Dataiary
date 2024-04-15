@@ -11,6 +11,10 @@ import SwiftData
 @main
 struct DataiaryApp: App {
     
+    // MARK: - CoreData
+    let persistenceController = PersistenceController.shared
+    
+    // MARK: - SwiftData
     /// 전역적으로 사용할 SwiftData ModelContainer
     var sharedModelContainer: ModelContainer = {
         
@@ -33,7 +37,10 @@ struct DataiaryApp: App {
         WindowGroup {
             MainView()
         }
-        // 4. ModelContainer 전역적으로 사용하기 위해 주입
+        // CoreData - Environment로 context 전달
+        .environment(\.managedObjectContext, persistenceController.container.viewContext)
+        
+        // SwiftData - ModelContainer 전역적으로 사용하기 위해 주입
         .modelContainer(sharedModelContainer)
     }
 }

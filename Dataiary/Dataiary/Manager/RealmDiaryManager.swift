@@ -66,8 +66,6 @@ extension RealmDiaryManager {
     
     func delete(for diary: Diary) {
         
-        let a = realm.object(ofType: RealmDiary.self, forPrimaryKey: diary.id)
-        
         // Realm 데이터 생성
         guard let realmDiary = realm.object(ofType: RealmDiary.self, forPrimaryKey: diary.id) else {
             print(DiaryError.notFound)
