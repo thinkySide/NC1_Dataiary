@@ -19,7 +19,7 @@ extension RealmDiaryManager {
     
     func fetchList() -> [Diary] {
         var diarys: [Diary] = []
-        let result = realm.objects(RealmDiary.self)
+        let result = realm.objects(RealmDiary.self).sorted(byKeyPath: "date", ascending: false)
         for realmDairy in result {
             diarys.append(
                 Diary(

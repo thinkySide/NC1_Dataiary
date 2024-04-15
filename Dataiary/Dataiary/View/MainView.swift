@@ -13,7 +13,7 @@ struct MainView: View {
     @StateObject private var pathModel: PathModel = .init()
     
     /// 현재 선택된 Tab
-    @State private var selectedTab: Tab = .swiftData
+    @State private var selectedTab: Tab = .coreData
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
