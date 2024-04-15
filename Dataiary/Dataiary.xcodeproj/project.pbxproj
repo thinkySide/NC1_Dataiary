@@ -40,10 +40,12 @@
 		827B7E002BC6C55800C56FE5 /* PathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7DFF2BC6C55800C56FE5 /* PathType.swift */; };
 		827B7E022BC6CFD200C56FE5 /* DiaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E012BC6CFD200C56FE5 /* DiaryTextField.swift */; };
 		827B7E042BC6D30F00C56FE5 /* ReadDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E032BC6D30F00C56FE5 /* ReadDiaryView.swift */; };
-		827B7E072BC777B800C56FE5 /* SwiftDataDiaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E062BC777B800C56FE5 /* SwiftDataDiaryManager.swift */; };
+		827B7E072BC777B800C56FE5 /* SwiftDiaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E062BC777B800C56FE5 /* SwiftDiaryManager.swift */; };
 		827B7E0A2BC7785900C56FE5 /* DiaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E092BC7785900C56FE5 /* DiaryManager.swift */; };
 		827B7E0C2BC778B400C56FE5 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E0B2BC778B400C56FE5 /* Diary.swift */; };
 		827B7E112BC7A9A800C56FE5 /* MockModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B7E102BC7A9A800C56FE5 /* MockModelContainer.swift */; };
+		82E776CF2BCCB1C700D10E2E /* RealmDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776CE2BCCB1C700D10E2E /* RealmDiary.swift */; };
+		82E776D12BCCB32E00D10E2E /* RealmDiaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776D02BCCB32E00D10E2E /* RealmDiaryManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,10 +82,12 @@
 		827B7DFF2BC6C55800C56FE5 /* PathType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathType.swift; sourceTree = "<group>"; };
 		827B7E012BC6CFD200C56FE5 /* DiaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTextField.swift; sourceTree = "<group>"; };
 		827B7E032BC6D30F00C56FE5 /* ReadDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadDiaryView.swift; sourceTree = "<group>"; };
-		827B7E062BC777B800C56FE5 /* SwiftDataDiaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataDiaryManager.swift; sourceTree = "<group>"; };
+		827B7E062BC777B800C56FE5 /* SwiftDiaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDiaryManager.swift; sourceTree = "<group>"; };
 		827B7E092BC7785900C56FE5 /* DiaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryManager.swift; sourceTree = "<group>"; };
 		827B7E0B2BC778B400C56FE5 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		827B7E102BC7A9A800C56FE5 /* MockModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModelContainer.swift; sourceTree = "<group>"; };
+		82E776CE2BCCB1C700D10E2E /* RealmDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDiary.swift; sourceTree = "<group>"; };
+		82E776D02BCCB32E00D10E2E /* RealmDiaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDiaryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 				827B7DE42BC6753B00C56FE5 /* Tab.swift */,
 				827B7DFF2BC6C55800C56FE5 /* PathType.swift */,
 				827B7E0B2BC778B400C56FE5 /* Diary.swift */,
+				82E776CE2BCCB1C700D10E2E /* RealmDiary.swift */,
 				827B7DF92BC6BFCD00C56FE5 /* SwiftDataDiary.swift */,
 			);
 			path = Model;
@@ -233,7 +238,8 @@
 		827B7E052BC7779C00C56FE5 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				827B7E062BC777B800C56FE5 /* SwiftDataDiaryManager.swift */,
+				82E776D02BCCB32E00D10E2E /* RealmDiaryManager.swift */,
+				827B7E062BC777B800C56FE5 /* SwiftDiaryManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -343,12 +349,14 @@
 			files = (
 				827B7DE72BC6763300C56FE5 /* SwiftDataListView.swift in Sources */,
 				827B7DFC2BC6C22300C56FE5 /* Helper+DateExtension.swift in Sources */,
-				827B7E072BC777B800C56FE5 /* SwiftDataDiaryManager.swift in Sources */,
+				827B7E072BC777B800C56FE5 /* SwiftDiaryManager.swift in Sources */,
 				827B7DFE2BC6C3EA00C56FE5 /* WriteDiaryView.swift in Sources */,
 				827B7DF62BC6BBC000C56FE5 /* DiaryActionButton.swift in Sources */,
+				82E776CF2BCCB1C700D10E2E /* RealmDiary.swift in Sources */,
 				827B7E0A2BC7785900C56FE5 /* DiaryManager.swift in Sources */,
 				827B7DB82BC535B000C56FE5 /* MainView.swift in Sources */,
 				827B7DFA2BC6BFCD00C56FE5 /* SwiftDataDiary.swift in Sources */,
+				82E776D12BCCB32E00D10E2E /* RealmDiaryManager.swift in Sources */,
 				827B7DE92BC676FB00C56FE5 /* RealmDataListView.swift in Sources */,
 				827B7DEB2BC6771800C56FE5 /* CoreDataListView.swift in Sources */,
 				827B7E002BC6C55800C56FE5 /* PathType.swift in Sources */,

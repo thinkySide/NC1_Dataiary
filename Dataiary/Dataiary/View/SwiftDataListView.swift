@@ -11,7 +11,7 @@ import SwiftData
 struct SwiftDataListView: View {
     
     @EnvironmentObject var pathModel: PathModel
-    @EnvironmentObject var diaryManager: SwiftDataDiaryManager
+    @EnvironmentObject var diaryManager: SwiftDiaryManager
     
     var body: some View {
         VStack(spacing: 0) {
@@ -47,7 +47,7 @@ struct SwiftDataListView: View {
     SwiftDataListView()
         .environmentObject(PathModel())
         .environmentObject(
-            SwiftDataDiaryManager(
+            SwiftDiaryManager(
                 modelContext: MockModelContainer.mockModelContainer.mainContext
             )
         )

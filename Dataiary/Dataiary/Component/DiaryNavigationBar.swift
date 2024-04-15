@@ -40,11 +40,7 @@ struct DiaryNavigationBar<Leading: View, Trailing: View>: View {
 #Preview {
     DiaryNavigationBar(
         title: AppInfo.name,
-        leadingView: {
-            Button("", image: .backIcon) {}
-        },
-        trailingView: {
-            Button("", image: .menuIcon) {}
-        }
+        leadingView: { Button("", image: .backIcon) {} },
+        trailingView: { Button("", image: .menuIcon) {} }
     )
 }

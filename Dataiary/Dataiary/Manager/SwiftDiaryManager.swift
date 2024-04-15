@@ -1,5 +1,5 @@
 //
-//  SwiftDataDiaryManager.swift
+//  SwiftDiaryManager.swift
 //  Dataiary
 //
 //  Created by 김민준 on 4/11/24.
@@ -8,10 +8,12 @@
 import SwiftUI
 import SwiftData
 
-final class SwiftDataDiaryManager: DiaryManager {
+final class SwiftDiaryManager: DiaryManager {
     
+    /// Diary 배열
     @Published private var diarys: [Diary] = []
     
+    /// ModelContext
     private let modelContext: ModelContext
     
     init(modelContext: ModelContext) {
@@ -20,7 +22,7 @@ final class SwiftDataDiaryManager: DiaryManager {
 }
 
 // MARK: - SwiftData Function
-extension SwiftDataDiaryManager {
+extension SwiftDiaryManager {
     
     /// SwiftData를 저장합니다.
     private func saveData() throws {
@@ -59,7 +61,7 @@ extension SwiftDataDiaryManager {
 }
 
 // MARK: - Protocol Function
-extension SwiftDataDiaryManager {
+extension SwiftDiaryManager {
     
     /// Diary List를 반환합니다.
     func fetchList() -> [Diary] {

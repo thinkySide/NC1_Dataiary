@@ -68,7 +68,7 @@ struct WriteDiaryView: View {
 
 #Preview {
     WriteDiaryView(
-        diaryManager: SwiftDataDiaryManager(
+        diaryManager: SwiftDiaryManager(
             modelContext: MockModelContainer.mockModelContainer.mainContext
         )
     )

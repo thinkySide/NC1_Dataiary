@@ -100,12 +100,10 @@ struct ReadDiaryView: View {
 
 #Preview {
     ReadDiaryView(
-        diaryManager: SwiftDataDiaryManager(
+        diaryManager: SwiftDiaryManager(
             modelContext: MockModelContainer.mockModelContainer.mainContext
         ),
         diary: Diary(id: UUID(), date: Date(), content: "일기입니다.")
     )
-    .environmentObject(
-        PathModel()
-    )
+    .environmentObject(PathModel())
 }

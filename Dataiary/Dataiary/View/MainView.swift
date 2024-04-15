@@ -30,7 +30,7 @@ struct MainView: View {
                 DiaryTabBar(selectedTab: $selectedTab)
                 
                 DataTabView(
-                    swiftDataDiarymanager: SwiftDataDiaryManager(modelContext: modelContext),
+                    swiftDataDiarymanager: SwiftDiaryManager(modelContext: modelContext),
                     selectedTab: $selectedTab
                 )
             }
@@ -43,7 +43,7 @@ struct MainView: View {
 // MARK: - DataTabView
 private struct DataTabView: View {
     
-    @StateObject var swiftDataDiarymanager: SwiftDataDiaryManager
+    @StateObject var swiftDataDiarymanager: SwiftDiaryManager
     @Binding var selectedTab: Tab
     
     var body: some View {
