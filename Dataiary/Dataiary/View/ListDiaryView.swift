@@ -10,11 +10,13 @@ import SwiftUI
 struct ListDiaryView: View {
     
     @EnvironmentObject var pathModel: PathModel
+    @Binding var tab: Tab
     
     private let diaryManager: any DiaryManager
     
-    init(diaryManager: any DiaryManager) {
+    init(diaryManager: any DiaryManager, tab: Binding<Tab>) {
         self.diaryManager = diaryManager
+        self._tab = tab
     }
     
     var body: some View {
@@ -39,7 +41,7 @@ struct ListDiaryView: View {
             
             Spacer()
             
-            DiaryActionButton(title: "add SwiftData diary.") {
+            DiaryActionButton(title: "add \(tab.rawValue) diary.") {
                 pathModel.paths.append(.write(diaryManager: diaryManager))
             }
         }
@@ -51,6 +53,7 @@ struct ListDiaryView: View {
     ListDiaryView(
         diaryManager: SwiftDiaryManager(
             modelContext: MockModelContainer.mockModelContainer.mainContext
-        )
+        ),
+        tab: .constant(.coreData)
     )
 }

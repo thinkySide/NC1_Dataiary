@@ -15,7 +15,8 @@ struct MainView: View {
     /// 현재 선택된 Tab
     @State private var selectedTab: Tab = .coreData
     
-    @Environment(\.managedObjectContext) var managedObjectContext
+    /// CoreData에서 사용할 NSManagedObjectContext
+    @Environment(\.managedObjectContext) private var managedObjectContext
     
     /// SwiftData에서 사용할 ModelContext
     @Environment(\.modelContext) private var modelContext
@@ -49,18 +50,28 @@ private struct DataTabView: View {
     @StateObject var coreDataDiaryManager: CoreDataDiaryManager
     @StateObject var realDataDiaryManager: RealmDiaryManager = .init()
     @StateObject var swiftDataDiarymanager: SwiftDiaryManager
+    
     @Binding var selectedTab: Tab
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            ListDiaryView(diaryManager: coreDataDiaryManager)
-                .tag(Tab.coreData)
+            ListDiaryView(
+                diaryManager: coreDataDiaryManager,
+                tab: $selectedTab
+            )
+            .tag(Tab.coreData)
             
-            ListDiaryView(diaryManager: realDataDiaryManager)
-                .tag(Tab.realm)
+            ListDiaryView(
+                diaryManager: realDataDiaryManager,
+                tab: $selectedTab
+            )
+            .tag(Tab.realm)
             
-            ListDiaryView(diaryManager: swiftDataDiarymanager)
-                .tag(Tab.swiftData)
+            ListDiaryView(
+                diaryManager: swiftDataDiarymanager,
+                tab: $selectedTab
+            )
+            .tag(Tab.swiftData)
         }
         .ignoresSafeArea()
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
@@ -79,6 +90,7 @@ private struct DataTabView: View {
 // MARK: - Preview
 #Preview {
     MainView()
-        .modelContainer(MockModelContainer.mockModelContainer)
         .environmentObject(PathModel())
+        .modelContainer(MockModelContainer.mockModelContainer)
+        .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
 }
