@@ -49,6 +49,7 @@
 		82E776DB2BCD549000D10E2E /* CoreDataDiaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776DA2BCD549000D10E2E /* CoreDataDiaryManager.swift */; };
 		82E776DD2BCD551700D10E2E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776DC2BCD551700D10E2E /* PersistenceController.swift */; };
 		82E776DF2BCD6C8600D10E2E /* ListDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E776DE2BCD6C8600D10E2E /* ListDiaryView.swift */; };
+		82E777032BCF52ED00D10E2E /* AppearanceToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E777022BCF52ED00D10E2E /* AppearanceToggleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		82E776DA2BCD549000D10E2E /* CoreDataDiaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDiaryManager.swift; sourceTree = "<group>"; };
 		82E776DC2BCD551700D10E2E /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		82E776DE2BCD6C8600D10E2E /* ListDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDiaryView.swift; sourceTree = "<group>"; };
+		82E777022BCF52ED00D10E2E /* AppearanceToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceToggleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 				827B7DF52BC6BBC000C56FE5 /* DiaryActionButton.swift */,
 				827B7DF72BC6BF8000C56FE5 /* DiaryListCell.swift */,
 				827B7E012BC6CFD200C56FE5 /* DiaryTextField.swift */,
+				82E777022BCF52ED00D10E2E /* AppearanceToggleButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				82E776D42BCD52B000D10E2E /* CoreDataModel.xcdatamodeld in Sources */,
 				827B7DF82BC6BF8000C56FE5 /* DiaryListCell.swift in Sources */,
 				827B7E0C2BC778B400C56FE5 /* Diary.swift in Sources */,
+				82E777032BCF52ED00D10E2E /* AppearanceToggleButton.swift in Sources */,
 				827B7DE22BC6712200C56FE5 /* Helper+CustomFont.swift in Sources */,
 				827B7DB62BC535B000C56FE5 /* DataiaryApp.swift in Sources */,
 				827B7DEE2BC6779100C56FE5 /* DiaryTabBar.swift in Sources */,

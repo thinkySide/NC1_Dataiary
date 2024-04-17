@@ -21,23 +21,31 @@ struct ListDiaryView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            ScrollView {
-                ForEach(diaryManager.fetchList()) { diary in
-                    DiaryListCell(
-                        date: diary.date,
-                        content: diary.content
-                    )
-                    .onTapGesture {
-                        pathModel.paths.append(
-                            .read(
-                                diaryManager: diaryManager,
-                                diary: diary
-                            )
+            
+            if diaryManager.fetchList().isEmpty {
+                Spacer()
+                Text("empty diary.")
+                    .pretendard(.bold, 17)
+                    .foregroundStyle(Color.main)
+            } else {
+                ScrollView {
+                    ForEach(diaryManager.fetchList()) { diary in
+                        DiaryListCell(
+                            date: diary.date,
+                            content: diary.content
                         )
+                        .onTapGesture {
+                            pathModel.paths.append(
+                                .read(
+                                    diaryManager: diaryManager,
+                                    diary: diary
+                                )
+                            )
+                        }
                     }
                 }
+                .padding(.top, 16)
             }
-            .padding(.top, 16)
             
             Spacer()
             

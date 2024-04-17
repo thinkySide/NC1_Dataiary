@@ -9,17 +9,20 @@ import SwiftUI
 
 struct MainView: View {
     
+    /// CoreData에서 사용할 NSManagedObjectContext
+    @Environment(\.managedObjectContext) private var managedObjectContext
+    
+    /// SwiftData에서 사용할 ModelContext
+    @Environment(\.modelContext) private var modelContext
+    
     /// Navigation Path를 관리하는 모델
     @StateObject private var pathModel: PathModel = .init()
     
     /// 현재 선택된 Tab
     @State private var selectedTab: Tab = .coreData
     
-    /// CoreData에서 사용할 NSManagedObjectContext
-    @Environment(\.managedObjectContext) private var managedObjectContext
-    
-    /// SwiftData에서 사용할 ModelContext
-    @Environment(\.modelContext) private var modelContext
+    /// 화면 모드 전환용 ColorScheme
+    @State private var colorScheme: ColorScheme = .light
     
     var body: some View {
         NavigationStack(path: $pathModel.paths) {
@@ -27,7 +30,9 @@ struct MainView: View {
                 DiaryNavigationBar(
                     title: AppInfo.name,
                     leadingView: {},
-                    trailingView: {}
+                    trailingView: {
+                        AppearanceToggleButton(curretColorScheme: $colorScheme)
+                    }
                 )
                 
                 DiaryTabBar(selectedTab: $selectedTab)
@@ -41,6 +46,7 @@ struct MainView: View {
             .background(Color.background)
         }
         .environmentObject(pathModel)
+        .preferredColorScheme(colorScheme)
     }
 }
 

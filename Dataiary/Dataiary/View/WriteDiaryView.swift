@@ -10,6 +10,7 @@ import SwiftData
 
 struct WriteDiaryView: View {
     
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var pathModel: PathModel
     @State private var content: String = ""
     @FocusState private var isTextFieldFocus: Bool
@@ -27,7 +28,7 @@ struct WriteDiaryView: View {
             DiaryNavigationBar(
                 title: creationDate.diaryFormat,
                 leadingView: {
-                    Button("", image: .backIcon) {
+                    Button("", image: colorScheme == .light ? .backIcon : .backIconDark) {
                         pathModel.paths.removeLast()
                     }
                 },

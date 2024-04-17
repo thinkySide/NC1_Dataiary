@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ReadDiaryView: View {
     
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var pathModel: PathModel
     @State private var content: String
     @State private var isEditMode = false
@@ -29,7 +30,7 @@ struct ReadDiaryView: View {
             DiaryNavigationBar(
                 title: diary.date.diaryFormat,
                 leadingView: {
-                    Button("", image: .backIcon) {
+                    Button("", image: colorScheme == .light ? .backIcon : .backIconDark) {
                         pathModel.paths.removeLast()
                     }
                 },
@@ -53,7 +54,7 @@ struct ReadDiaryView: View {
                         .opacity(content.isEmpty ? 0.3 : 1)
                         .disabled(content.isEmpty)
                     } else {
-                        Menu("", image: .menuIcon) {
+                        Menu("", image: colorScheme == .light ? .menuIcon : .menuIconDark) {
                             Button("delete.", role: .destructive) {
                                 isDeleteAlertPresented.toggle()
                             }
