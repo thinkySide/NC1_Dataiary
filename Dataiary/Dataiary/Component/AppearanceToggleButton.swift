@@ -16,8 +16,12 @@ struct AppearanceToggleButton: View {
         Button {
             curretColorScheme = colorScheme == .light ? .dark : .light
         } label: {
-            Text("화면 모드 전환")
+            Image(systemName: colorScheme == .light ? "moon.fill" : "sun.max.fill")
+                .resizable()
+                .frame(width: 20, height: 20)
+                .foregroundStyle(Color.main)
         }
+        .animation(.bouncy, value: colorScheme)
     }
 }
 
