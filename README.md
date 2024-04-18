@@ -20,6 +20,10 @@ iOS에서 가장 많이 사용하는 3가지 로컬데이터 저장 방법으로
 
 <img alt="Section 1" src="https://github.com/thinkySide/NC1_Dataiary/assets/113565086/d9f47855-b034-403d-8efa-e38fcb9abe0a">
 
+### 간단하게 정리해본 iOS의 로컬데이터
+
+![image](https://github.com/thinkySide/NC1_Dataiary/assets/113565086/f4850883-2f6c-4a29-a1d3-77b09e367a0f)
+
 ## 프로젝트 포인트
 
 프로젝트를 진행하며 해결했던 이슈, 알게 된 것들, 기억하고 싶은 순간들을 풀어 작성합니다.
